@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import Layout from '../components/Layout'
 import { CONTACT } from '../content/company'
-import { usePageMeta } from '../lib/usePageMeta'
 
 const DOCS = {
   privacy: {
@@ -33,7 +32,6 @@ const DOCS = {
 
 export default function LegalPage({ doc }: { doc: keyof typeof DOCS }) {
   const page = DOCS[doc]
-  usePageMeta(page.title, page.description)
 
   return (
     <Layout>

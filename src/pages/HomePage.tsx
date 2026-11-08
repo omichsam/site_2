@@ -9,9 +9,8 @@ import { ArrowRightIcon, CheckIcon, CompassIcon, PinIcon, TeamIcon } from '../co
 import { company, differentiators, principles, process } from '../content/company'
 import { industries } from '../content/industries'
 import { articles } from '../content/insights'
-import { asset } from '../lib/asset'
-import { usePageMeta } from '../lib/usePageMeta'
 import { longDate } from '../lib/format'
+import Photo, { photoUrl } from '../components/Photo'
 
 const PRINCIPLE_ICONS = [<TeamIcon key="t" />, <CompassIcon key="c" />, <CheckIcon key="k" />]
 
@@ -23,7 +22,6 @@ const FACES = [
 ]
 
 export default function HomePage() {
-  usePageMeta('Avenyra Global', company.metaDescription)
 
   return (
     <Layout>
@@ -45,7 +43,7 @@ export default function HomePage() {
             <div className={styles.heroPeople}>
               <span className={styles.faces} aria-hidden="true">
                 {FACES.map((face) => (
-                  <img key={face.src} src={asset(face.src)} alt="" style={{ objectPosition: face.pos }} />
+                  <img key={face.src} src={photoUrl(face.src, 480)} alt="" width={40} height={40} style={{ objectPosition: face.pos }} />
                 ))}
               </span>
               <span>
@@ -74,10 +72,10 @@ export default function HomePage() {
         <div className={`${styles.wrap} ${styles.workforceSplit}`}>
           <Reveal className={styles.workforceMedia}>
             <div className={styles.workforcePhoto}>
-              <img src={asset('/images/hr-meeting.jpg')} alt="Three colleagues in discussion around a meeting table" width={900} height={600} loading="lazy" style={{ objectPosition: 'center' }} />
+              <Photo src="/images/hr-meeting.jpg" alt="Three colleagues in discussion around a meeting table" style={{ objectPosition: 'center' }} />
             </div>
             <div className={styles.workforceInset}>
-              <img src={asset('/images/professional.jpg')} alt="An African professional seated by an office window" loading="lazy" />
+              <Photo src="/images/professional.jpg" alt="An African professional seated by an office window" sizes="200px" />
             </div>
             <div className={styles.workforceBadge}>
               <span className={styles.workforceBadgeIcon}><TeamIcon /></span>
@@ -138,12 +136,12 @@ export default function HomePage() {
         <div className={`${styles.wrap} ${styles.why}`}>
           <Reveal className={styles.mosaic}>
             <div className={`${styles.mosaicTile} ${styles.mosaicMain}`}>
-              <img className={styles.mosaicImg} src={asset('/images/boardroom.jpg')} alt="A full boardroom of African professionals in a planning session" loading="lazy" />
+              <Photo src="/images/boardroom.jpg" className={styles.mosaicImg} alt="A full boardroom of African professionals in a planning session" />
               <div className={styles.whyVisualTag}><PinIcon size={14} /> Based in Nairobi</div>
               <h3>Your workforce deserves the right support.</h3>
             </div>
             <div className={styles.mosaicTile}>
-              <img className={styles.mosaicImg} src={asset('/images/mentoring.jpg')} alt="A manager advising a colleague over a laptop" loading="lazy" />
+              <Photo src="/images/mentoring.jpg" className={styles.mosaicImg} alt="A manager advising a colleague over a laptop" />
             </div>
             <div className={`${styles.mosaicTile} ${styles.mosaicNote}`}>
               <TeamIcon size={20} />
@@ -186,7 +184,7 @@ export default function HomePage() {
             {industries.map((industry, i) => (
               <Reveal key={industry.slug} delay={(i % 4) * 90} className={i === 0 || i === 7 ? styles.industryTileWide : undefined}>
                 <Link to={`/industries#${industry.slug}`} className={styles.industryTile}>
-                  <img src={asset(industry.image)} alt={industry.imageAlt} loading="lazy" />
+                  <Photo src={industry.image} alt={industry.imageAlt} sizes="(max-width: 720px) 100vw, 560px" />
                   <span className={styles.industryTileBody}>
                     <span className={styles.industryTileNum}>{String(i + 1).padStart(2, '0')}</span>
                     <b>{industry.title}</b>
@@ -244,9 +242,9 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal className={styles.collage}>
-            <img className={styles.collageA} src={asset('/images/interview-table.jpg')} alt="Two professionals in conversation at an interview table" loading="lazy" />
-            <img className={styles.collageB} src={asset('/images/graduate.jpg')} alt="A graduate in cap and gown in Nairobi" loading="lazy" />
-            <img className={styles.collageC} src={asset('/images/remote-work.jpg')} alt="A professional smiling at her laptop" loading="lazy" />
+            <Photo src="/images/interview-table.jpg" className={styles.collageA} sizes="(max-width: 980px) 50vw, 320px" alt="Two professionals in conversation at an interview table" />
+            <Photo src="/images/graduate.jpg" className={styles.collageB} sizes="(max-width: 980px) 50vw, 320px" alt="A graduate in cap and gown in Nairobi" />
+            <Photo src="/images/remote-work.jpg" className={styles.collageC} sizes="(max-width: 980px) 50vw, 320px" alt="A professional smiling at her laptop" />
             <span className={styles.collageBadge}><CheckIcon /> CVs kept private</span>
           </Reveal>
         </div>
@@ -267,7 +265,7 @@ export default function HomePage() {
               <Reveal key={article.slug} delay={i * 110} className={styles.audienceCard}>
                 <Link to={`/insights/${article.slug}`} className={styles.audienceLink}>
                   <div className={styles.audienceMedia}>
-                    <img src={asset(article.image)} alt={article.imageAlt} loading="lazy" />
+                    <Photo src={article.image} alt={article.imageAlt} sizes="(max-width: 720px) 100vw, 380px" />
                     <span className={styles.audienceTag}>{article.category}</span>
                   </div>
                   <div className={styles.audienceBody}>

@@ -32,10 +32,10 @@ export default function Footer() {
 
         <div className={styles.footTop}>
           <div className={styles.footBrand}>
-            <Link to="/" className={styles.brand} aria-label="Avenyra Global home">
+            <Link to="/" className={styles.brand}>
               <LogoMark size={52} className={styles.footLogo} />
               <span className={styles.brandWord}>
-                Avenyra
+                Avenyra{' '}
                 <span>Global</span>
               </span>
             </Link>
@@ -81,7 +81,8 @@ export default function Footer() {
         </div>
 
         <div className={styles.footBottom}>
-          <p>© {new Date().getFullYear()} Avenyra Global. All rights reserved.</p>
+          {/* The prerendered year can lag the visitor's clock; let React fix it quietly. */}
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Avenyra Global. All rights reserved.</p>
           <div className={styles.footLegal}>
             <span>Version {__APP_VERSION__}</span>
             <Link to="/privacy">Privacy Policy</Link>

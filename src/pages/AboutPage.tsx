@@ -5,8 +5,7 @@ import Reveal from '../components/Reveal'
 import PageHero from '../components/PageHero'
 import { ArrowRightIcon, CheckIcon, CompassIcon, PinIcon, TeamIcon } from '../components/icons'
 import { company, principles, values } from '../content/company'
-import { asset } from '../lib/asset'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 const GALLERY = [
   { src: '/images/boardroom.jpg', alt: 'A boardroom planning session', cls: 'galleryWide' },
@@ -18,7 +17,6 @@ const GALLERY = [
 ]
 
 export default function AboutPage() {
-  usePageMeta('About Us', 'Avenyra Global is a people-centred human resource outsourcing, recruitment and workforce solutions company.')
 
   return (
     <Layout>
@@ -46,9 +44,9 @@ export default function AboutPage() {
             <p className={styles.workforceLede}>{company.description}</p>
           </Reveal>
           <Reveal className={styles.collage}>
-            <img className={styles.collageA} src={asset('/images/small-team.jpg')} alt="A small team meeting in a modern office" loading="lazy" />
-            <img className={styles.collageB} src={asset('/images/professional.jpg')} alt="An African professional seated by an office window" loading="lazy" />
-            <img className={styles.collageC} src={asset('/images/hr-laptop.jpg')} alt="An HR professional working on a laptop" loading="lazy" />
+            <Photo src="/images/small-team.jpg" className={styles.collageA} alt="A small team meeting in a modern office" sizes="(max-width: 980px) 50vw, 320px" />
+            <Photo src="/images/professional.jpg" className={styles.collageB} alt="An African professional seated by an office window" sizes="(max-width: 980px) 50vw, 320px" />
+            <Photo src="/images/hr-laptop.jpg" className={styles.collageC} alt="An HR professional working on a laptop" sizes="(max-width: 980px) 50vw, 320px" />
             <span className={styles.collageBadge}><TeamIcon /> {company.tagline}</span>
           </Reveal>
         </div>
@@ -58,7 +56,7 @@ export default function AboutPage() {
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={`${styles.wrap} ${styles.twoCards}`}>
           <Reveal className={`${styles.infoCard} ${styles.infoCardPhoto}`}>
-            <img src={asset('/images/panel-meeting.jpg')} alt="" loading="lazy" />
+            <Photo src="/images/panel-meeting.jpg" alt="" />
             <span className={styles.solutionEyebrowDark}>Our Vision</span>
             <h2>Workplaces where people can do good work.</h2>
             <p>
@@ -67,7 +65,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal className={`${styles.infoCard} ${styles.infoCardDark} ${styles.infoCardPhoto}`} delay={120}>
-            <img src={asset('/images/handshake.jpg')} alt="" loading="lazy" />
+            <Photo src="/images/handshake.jpg" alt="" />
             <span className={styles.solutionEyebrow}>Our Mission</span>
             <h2>Practical support for people and organisations.</h2>
             <p>
@@ -105,7 +103,7 @@ export default function AboutPage() {
         <div className={`${styles.wrap} ${styles.workforceSplit}`}>
           <Reveal className={styles.workforceMedia}>
             <div className={styles.workforcePhoto}>
-              <img src={asset('/images/nairobi-office.jpg')} alt="A professional working at a laptop in a Nairobi office" loading="lazy" />
+              <Photo src="/images/nairobi-office.jpg" alt="A professional working at a laptop in a Nairobi office" />
             </div>
             <div className={styles.workforceBadge}>
               <span className={styles.workforceBadgeIcon}><CheckIcon /></span>
@@ -148,7 +146,7 @@ export default function AboutPage() {
           <Reveal className={styles.gallery}>
             {GALLERY.map((photo) => (
               <figure key={photo.src} className={photo.cls ? styles[photo.cls] : undefined}>
-                <img src={asset(photo.src)} alt={photo.alt} loading="lazy" />
+                <Photo src={photo.src} alt={photo.alt} />
               </figure>
             ))}
           </Reveal>

@@ -8,13 +8,11 @@ import { SERVICE_AREA } from '../components/ServicesTabs'
 import { ArrowRightIcon, CheckIcon, CompassIcon } from '../components/icons'
 import { getService, services } from '../content/services'
 import { industries } from '../content/industries'
-import { asset } from '../lib/asset'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 export default function ServiceDetailPage() {
   const { slug = '' } = useParams()
   const service = getService(slug)
-  usePageMeta(service?.title ?? 'Service', service?.summary)
   if (!service) return <Navigate to="/services" replace />
 
   const index = services.indexOf(service)
@@ -50,7 +48,7 @@ export default function ServiceDetailPage() {
           </Reveal>
           <Reveal className={styles.workforceMedia}>
             <div className={styles.workforcePhoto}>
-              <img src={asset(service.image2)} alt={service.image2Alt} loading="lazy" />
+              <Photo src={service.image2} alt={service.image2Alt} />
             </div>
           </Reveal>
         </div>
@@ -96,7 +94,7 @@ export default function ServiceDetailPage() {
               <div className={styles.sectorThumbs}>
                 {sectors.map((sector) => (
                   <Link key={sector.slug} to={`/industries#${sector.slug}`} className={styles.sectorThumb}>
-                    <img src={asset(sector.image)} alt="" loading="lazy" />
+                    <Photo src={sector.image} alt="" sizes="260px" />
                     <span>{sector.title}</span>
                   </Link>
                 ))}
@@ -118,7 +116,7 @@ export default function ServiceDetailPage() {
           <div className={styles.miniCards}>
             {others.map((other) => (
               <Link key={other.slug} to={`/services/${other.slug}`} className={styles.miniCard}>
-                <img src={asset(other.image)} alt="" loading="lazy" />
+                <Photo src={other.image} alt="" sizes="80px" />
                 <span>
                   <b>{other.title}</b>
                   <small>Learn more <ArrowRightIcon size={13} /></small>

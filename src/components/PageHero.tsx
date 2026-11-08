@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
-import { asset } from '../lib/asset'
+import Photo from './Photo'
 
 interface Crumb { label: string; to?: string }
 
@@ -48,7 +48,7 @@ export default function PageHero({
         </div>
         <div className={styles.workforceMedia}>
           <div className={`${styles.workforcePhoto} ${styles.pageHeroPhoto}`}>
-            <img src={asset(image)} alt={imageAlt} width={1400} height={935} />
+            <Photo src={image} alt={imageAlt} priority sizes="(max-width: 980px) 100vw, 560px" />
           </div>
           {badge && (
             <div className={styles.workforceBadge}>

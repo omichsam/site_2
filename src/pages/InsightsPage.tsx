@@ -5,12 +5,10 @@ import Layout from '../components/Layout'
 import Reveal from '../components/Reveal'
 import { ArrowRightIcon } from '../components/icons'
 import { articles, insightCategories } from '../content/insights'
-import { asset } from '../lib/asset'
 import { longDate } from '../lib/format'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 export default function InsightsPage() {
-  usePageMeta('Insights', 'Practical notes on HR management, recruitment, employment practices, payroll, career development and leadership.')
   const [category, setCategory] = useState<string>('All')
   const [featured, ...rest] = articles
   const list = category === 'All' ? rest : articles.filter((a) => a.category === category)
@@ -28,7 +26,7 @@ export default function InsightsPage() {
           {/* Featured article */}
           <Reveal>
             <Link to={`/insights/${featured.slug}`} className={styles.featured}>
-              <img src={asset(featured.image)} alt={featured.imageAlt} />
+              <Photo src={featured.image} alt={featured.imageAlt} priority sizes="(max-width: 980px) 100vw, 640px" />
               <span className={styles.featuredBody}>
                 <span className={styles.solutionEyebrow}>Featured · {featured.category}</span>
                 <b>{featured.title}</b>
@@ -63,7 +61,7 @@ export default function InsightsPage() {
                 <Reveal key={article.slug} delay={(i % 3) * 100} className={styles.audienceCard}>
                   <Link to={`/insights/${article.slug}`} className={styles.audienceLink}>
                     <div className={styles.audienceMedia}>
-                      <img src={asset(article.image)} alt={article.imageAlt} loading="lazy" />
+                      <Photo src={article.image} alt={article.imageAlt} sizes="(max-width: 720px) 100vw, 380px" />
                       <span className={styles.audienceTag}>{article.category}</span>
                     </div>
                     <div className={styles.audienceBody}>

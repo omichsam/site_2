@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import { ArrowRightIcon } from './icons'
 import { services, type ServiceIcon } from '../content/services'
-import { asset } from '../lib/asset'
+import Photo from './Photo'
 
 export const SERVICE_AREA: Record<ServiceIcon, string> = {
   briefcase: 'Outsourcing',
@@ -69,12 +69,11 @@ export default function ServicesTabs() {
       <div id="service-panel" role="tabpanel" aria-labelledby={`tab-${service.slug}`} className={styles.solutionPanel}>
         <div className={styles.solutionMedia}>
           {services.map((item, i) => (
-            <img
+            <Photo
               key={item.slug}
-              src={asset(item.image)}
+              src={item.image}
               alt={i === active ? item.imageAlt : ''}
-              aria-hidden={i !== active}
-              loading={i === 0 ? 'eager' : 'lazy'}
+              sizes="(max-width: 980px) 100vw, 640px"
               className={`${styles.solutionImg} ${i === active ? styles.solutionImgActive : ''}`}
             />
           ))}

@@ -4,10 +4,12 @@ import styles from '../styles/site.module.css'
 import Header from './Header'
 import Footer from './Footer'
 import ScrollTopButton from './ScrollTopButton'
+import { useRouteMeta } from '../lib/usePageMeta'
 
 // Every page shares the header, the footer and the brand tokens on .page.
 export default function Layout({ children }: { children: ReactNode }) {
   const { pathname, hash } = useLocation()
+  useRouteMeta()
 
   // New page: start at the top, or at the #anchor when one is given.
   useEffect(() => {

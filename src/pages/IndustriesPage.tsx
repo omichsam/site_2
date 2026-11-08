@@ -6,13 +6,11 @@ import PageHero from '../components/PageHero'
 import { ArrowRightIcon, CheckIcon, PinIcon } from '../components/icons'
 import { industries } from '../content/industries'
 import { services } from '../content/services'
-import { asset } from '../lib/asset'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 const serviceSlug = (title: string) => services.find((s) => s.title === title)?.slug
 
 export default function IndustriesPage() {
-  usePageMeta('Industries', 'Workforce support for government, NGOs, financial services, healthcare, construction, manufacturing, hospitality, SMEs and corporates.')
 
   return (
     <Layout>
@@ -31,7 +29,7 @@ export default function IndustriesPage() {
         <div className={`${styles.wrap} ${styles.sectorJump}`}>
           {industries.map((industry) => (
             <a key={industry.slug} href={`#${industry.slug}`} className={styles.sectorJumpItem}>
-              <img src={asset(industry.image)} alt="" loading="lazy" />
+              <Photo src={industry.image} alt="" sizes="(max-width: 560px) 45vw, 140px" />
               <span>{industry.title}</span>
             </a>
           ))}
@@ -43,7 +41,7 @@ export default function IndustriesPage() {
           <div className={styles.wrap}>
             <Reveal className={`${styles.industryRow} ${i % 2 ? styles.industryRowFlip : ''}`}>
               <div className={styles.industryPhoto}>
-                <img src={asset(industry.image)} alt={industry.imageAlt} loading="lazy" />
+                <Photo src={industry.image} alt={industry.imageAlt} />
                 <span className={styles.industryPhotoNum}>{String(i + 1).padStart(2, '0')}</span>
               </div>
               <div>

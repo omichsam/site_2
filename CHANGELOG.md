@@ -4,8 +4,26 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-08
+
+Faster pages, better search results and link previews, and accessibility fixes.
+
 ### Added
 - Floating return-to-top button on every page, with a ring that fills as you scroll. On desktop it floats at the middle of the right edge with a "Back to top" label on hover; on phones it sits in the bottom corner.
+- Every page is prerendered to real HTML, so content shows before scripts load and search engines read each page in full.
+- Each page has its own title, description, canonical address and link-preview image for WhatsApp, LinkedIn and X.
+- Structured data for search engines: the company, each service, each article and breadcrumbs.
+- `sitemap.xml` and `robots.txt`.
+- 21 branded link-preview images and a 512px logo for search results and home-screen icons.
+
+### Changed
+- Photos are served as responsive WebP in three sizes, so phones download much smaller files. Every photo has its size set, so the layout no longer jumps while images load.
+- The main photo at the top of each page loads first; the rest load as you scroll.
+
+### Fixed
+- Pages such as `/services/payroll-management` opened directly no longer return a "not found" status.
+- Small orange text (section labels, "Learn more" links) now meets contrast guidelines.
+- The logo link's accessible name now matches its visible text.
 
 ## [1.0.0] - 2026-11-08
 

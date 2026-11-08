@@ -1,5 +1,5 @@
 import styles from '../styles/site.module.css'
-import { asset } from '../lib/asset'
+import Photo from './Photo'
 
 const PHOTOS: { src: string; label: string }[] = [
   { src: '/images/interview-table.jpg', label: 'Recruitment' },
@@ -22,7 +22,7 @@ export default function PhotoMarquee() {
       <div className={styles.marqueeTrack}>
         {[...PHOTOS, ...PHOTOS].map((photo, i) => (
           <figure key={i} className={styles.marqueeItem} aria-hidden={i >= PHOTOS.length}>
-            <img src={asset(photo.src)} alt="" loading="lazy" width={320} height={214} />
+            <Photo src={photo.src} alt="" sizes="260px" />
             <figcaption>{photo.label}</figcaption>
           </figure>
         ))}

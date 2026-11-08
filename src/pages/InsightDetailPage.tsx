@@ -3,14 +3,12 @@ import styles from '../styles/site.module.css'
 import Layout from '../components/Layout'
 import { ArrowRightIcon } from '../components/icons'
 import { articles, getArticle } from '../content/insights'
-import { asset } from '../lib/asset'
 import { longDate } from '../lib/format'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 export default function InsightDetailPage() {
   const { slug = '' } = useParams()
   const article = getArticle(slug)
-  usePageMeta(article?.title ?? 'Insight', article?.description)
   if (!article) return <Navigate to="/insights" replace />
 
   const more = articles.filter((a) => a.slug !== article.slug).slice(0, 3)
@@ -19,7 +17,7 @@ export default function InsightDetailPage() {
     <Layout>
       <article>
         <header className={styles.articleHero}>
-          <img src={asset(article.image)} alt={article.imageAlt} />
+          <Photo src={article.image} alt={article.imageAlt} priority sizes="100vw" />
           <div className={styles.wrap}>
             <nav aria-label="Breadcrumb" className={`${styles.crumbs} ${styles.crumbsLight}`}>
               <Link to="/">Home</Link>
@@ -48,7 +46,7 @@ export default function InsightDetailPage() {
           <div className={styles.miniCards}>
             {more.map((item) => (
               <Link key={item.slug} to={`/insights/${item.slug}`} className={styles.miniCard}>
-                <img src={asset(item.image)} alt="" loading="lazy" />
+                <Photo src={item.image} alt="" sizes="80px" />
                 <span>
                   <b>{item.title}</b>
                   <small>Read more <ArrowRightIcon size={13} /></small>

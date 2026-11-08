@@ -11,10 +11,8 @@ import InsightsPage from './pages/InsightsPage'
 import InsightDetailPage from './pages/InsightDetailPage'
 import ContactPage from './pages/ContactPage'
 import LegalPage from './pages/LegalPage'
-import { usePageMeta } from './lib/usePageMeta'
 
 function NotFound() {
-  usePageMeta('Page not found')
   return (
     <Layout>
       <section className={styles.section}>

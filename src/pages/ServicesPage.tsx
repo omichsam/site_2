@@ -8,11 +8,9 @@ import { SERVICE_AREA } from '../components/ServicesTabs'
 import { ArrowRightIcon, CheckIcon } from '../components/icons'
 import { services } from '../content/services'
 import { process } from '../content/company'
-import { asset } from '../lib/asset'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 export default function ServicesPage() {
-  usePageMeta('Our Services', 'HR outsourcing, recruitment, payroll, contract workforce management, training, HR advisory, temporary staffing and benefits administration.')
 
   return (
     <Layout>
@@ -50,8 +48,8 @@ export default function ServicesPage() {
           {services.map((service, i) => (
             <Reveal key={service.slug} id={service.slug} className={`${styles.zigzag} ${i % 2 ? styles.zigzagFlip : ''}`}>
               <div className={styles.zigzagMedia}>
-                <img className={styles.zigzagMain} src={asset(service.image)} alt={service.imageAlt} loading="lazy" />
-                <img className={styles.zigzagInset} src={asset(service.image2)} alt={service.image2Alt} loading="lazy" />
+                <Photo src={service.image} className={styles.zigzagMain} alt={service.imageAlt} />
+                <Photo src={service.image2} className={styles.zigzagInset} alt={service.image2Alt} sizes="240px" />
               </div>
               <div className={styles.zigzagText}>
                 <span className={styles.solutionEyebrowDark}>

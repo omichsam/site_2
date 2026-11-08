@@ -1,0 +1,118 @@
+{
+  "advisory": [
+    1400,
+    935
+  ],
+  "boardroom": [
+    1400,
+    935
+  ],
+  "clinic-consult": [
+    1400,
+    933
+  ],
+  "colleagues": [
+    900,
+    600
+  ],
+  "construction": [
+    1400,
+    934
+  ],
+  "consultation": [
+    924,
+    933
+  ],
+  "contract-signing": [
+    1400,
+    935
+  ],
+  "desk-call": [
+    1400,
+    935
+  ],
+  "factory": [
+    1400,
+    933
+  ],
+  "flipchart-workshop": [
+    1400,
+    935
+  ],
+  "graduate": [
+    1400,
+    2100
+  ],
+  "handshake": [
+    1400,
+    935
+  ],
+  "hospital-care": [
+    1400,
+    1134
+  ],
+  "hospitality": [
+    1400,
+    933
+  ],
+  "hr-laptop": [
+    1200,
+    675
+  ],
+  "hr-meeting": [
+    900,
+    600
+  ],
+  "interview-table": [
+    1400,
+    935
+  ],
+  "mentoring": [
+    1400,
+    788
+  ],
+  "nairobi-office": [
+    1400,
+    785
+  ],
+  "nairobi-skyline": [
+    1200,
+    900
+  ],
+  "open-office": [
+    1400,
+    935
+  ],
+  "panel-meeting": [
+    1400,
+    935
+  ],
+  "payroll-laptop": [
+    1200,
+    675
+  ],
+  "portrait": [
+    1400,
+    2100
+  ],
+  "professional": [
+    1200,
+    1798
+  ],
+  "remote-work": [
+    1200,
+    675
+  ],
+  "small-team": [
+    900,
+    601
+  ],
+  "team-computers": [
+    1600,
+    1067
+  ],
+  "training-session": [
+    1400,
+    933
+  ]
+}

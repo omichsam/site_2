@@ -26,10 +26,10 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.wrap}>
         <nav className={styles.nav} aria-label="Primary">
-          <Link to="/" className={styles.brand} aria-label="Avenyra Global home">
+          <Link to="/" className={styles.brand}>
             <LogoMark />
             <span className={styles.brandWord}>
-              Avenyra
+              Avenyra{' '}
               <span>Global</span>
             </span>
           </Link>

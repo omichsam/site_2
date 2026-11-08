@@ -5,8 +5,7 @@ import PageHero from '../components/PageHero'
 import EnquiryForm from '../components/EnquiryForm'
 import { CheckIcon, TeamIcon } from '../components/icons'
 import { employmentTypes } from '../content/company'
-import { asset } from '../lib/asset'
-import { usePageMeta } from '../lib/usePageMeta'
+import Photo from '../components/Photo'
 
 const FIELDS = [
   { title: 'Human Resources', image: '/images/hr-meeting.jpg' },
@@ -25,7 +24,6 @@ const STEPS = [
 ]
 
 export default function CareersPage() {
-  usePageMeta('Careers', 'View vacancies approved for publication by Avenyra Global, or submit your CV for future opportunities.')
 
   return (
     <Layout>
@@ -59,7 +57,7 @@ export default function CareersPage() {
           <div className={styles.fieldGrid}>
             {FIELDS.map((field, i) => (
               <Reveal key={field.title} delay={(i % 3) * 90} className={styles.fieldCard}>
-                <img src={asset(field.image)} alt="" loading="lazy" />
+                <Photo src={field.image} alt="" sizes="(max-width: 720px) 100vw, 380px" />
                 <span>{field.title}</span>
               </Reveal>
             ))}
@@ -85,7 +83,7 @@ export default function CareersPage() {
           </Reveal>
           <Reveal className={styles.workforceMedia}>
             <div className={styles.workforcePhoto}>
-              <img src={asset('/images/interview-table.jpg')} alt="Two professionals in conversation at an interview table" loading="lazy" />
+              <Photo src="/images/interview-table.jpg" alt="Two professionals in conversation at an interview table" />
             </div>
           </Reveal>
         </div>
@@ -127,7 +125,7 @@ export default function CareersPage() {
               Your CV is kept private and is used only for recruitment follow-up.
             </p>
             <div className={styles.contactPhoto}>
-              <img src={asset('/images/portrait.jpg')} alt="Portrait of a smiling African professional" loading="lazy" />
+              <Photo src="/images/portrait.jpg" alt="Portrait of a smiling African professional" />
             </div>
           </Reveal>
           <div className={styles.contactFormCard}>
