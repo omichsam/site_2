@@ -1291,3 +1291,15 @@
 .toTop:focus-visible { outline: 3px solid var(--periwinkle); outline-offset: 3px; }
 @media (max-width: 560px) { .toTop { right: 16px; bottom: 16px; width: 48px; height: 48px; } .toTopRing { width: 48px; height: 48px; } }
 @media (prefers-reduced-motion: reduce) { .toTop { transition: opacity .2s ease, visibility .2s; transform: none; } }
+
+/* Desktop: float at the middle of the right edge rather than the bottom corner,
+   with a small "Back to top" label that slides out on hover. */
+@media (min-width: 981px) {
+  .toTop { top: 50%; bottom: auto; right: 28px; transform: translate(16px, -50%) scale(.9); }
+  .toTopVisible { transform: translate(0, -50%); }
+  .toTop::after { content: "Back to top"; position: absolute; right: calc(100% + 12px); top: 50%; transform: translate(6px, -50%); padding: 6px 12px; border-radius: 8px; background: var(--indigo); color: var(--white); font: 600 12.5px var(--sans); white-space: nowrap; opacity: 0; pointer-events: none; box-shadow: 0 10px 24px -12px rgba(39, 30, 96, .6); transition: opacity .2s ease, transform .2s ease; }
+  .toTop:hover::after, .toTop:focus-visible::after { opacity: 1; transform: translate(0, -50%); }
+}
+@media (min-width: 981px) and (prefers-reduced-motion: reduce) {
+  .toTop, .toTopVisible { transform: translate(0, -50%); }
+}

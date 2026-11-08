@@ -5,7 +5,7 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 ## [Unreleased]
 
 ### Added
-- Floating return-to-top button on every page, with a ring that fills as you scroll.
+- Floating return-to-top button on every page, with a ring that fills as you scroll. On desktop it floats at the middle of the right edge with a "Back to top" label on hover; on phones it sits in the bottom corner.
 
 ## [1.0.0] - 2026-11-08
 
