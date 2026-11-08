@@ -48,7 +48,7 @@ export default function ContactPage() {
               <li><span><PinIcon /> {CONTACT.location}</span></li>
             </ul>
             <div className={styles.contactPhoto}>
-              <Photo src="/images/consultation.jpg" alt="An African professional listening during a consultation" />
+              <Photo src="/images/laptop-discussion.jpg" alt="Two colleagues discussing work over a laptop" />
             </div>
           </Reveal>
           <div className={styles.contactFormCard}>

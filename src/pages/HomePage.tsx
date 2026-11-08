@@ -4,22 +4,14 @@ import Layout from '../components/Layout'
 import Reveal from '../components/Reveal'
 import HeroShowcase from '../components/HeroShowcase'
 import ServicesTabs from '../components/ServicesTabs'
-import PhotoMarquee from '../components/PhotoMarquee'
 import { ArrowRightIcon, CheckIcon, CompassIcon, PinIcon, TeamIcon } from '../components/icons'
 import { company, differentiators, principles, process } from '../content/company'
 import { industries } from '../content/industries'
 import { articles } from '../content/insights'
 import { longDate } from '../lib/format'
-import Photo, { photoUrl } from '../components/Photo'
+import Photo from '../components/Photo'
 
 const PRINCIPLE_ICONS = [<TeamIcon key="t" />, <CompassIcon key="c" />, <CheckIcon key="k" />]
-
-const FACES = [
-  { src: '/images/portrait.jpg', pos: '50% 18%' },
-  { src: '/images/professional.jpg', pos: '50% 12%' },
-  { src: '/images/graduate.jpg', pos: '50% 22%' },
-  { src: '/images/consultation.jpg', pos: '30% 20%' },
-]
 
 export default function HomePage() {
 
@@ -41,11 +33,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className={styles.heroPeople}>
-              <span className={styles.faces} aria-hidden="true">
-                {FACES.map((face) => (
-                  <img key={face.src} src={photoUrl(face.src, 480)} alt="" width={40} height={40} style={{ objectPosition: face.pos }} />
-                ))}
-              </span>
+              <span className={styles.heroPeopleIcon} aria-hidden="true"><TeamIcon size={18} /></span>
               <span>
                 Serving businesses, institutions, NGOs <br className={styles.brWide} />and people seeking work.
               </span>
@@ -72,7 +60,7 @@ export default function HomePage() {
         <div className={`${styles.wrap} ${styles.workforceSplit}`}>
           <Reveal className={styles.workforceMedia}>
             <div className={styles.workforcePhoto}>
-              <Photo src="/images/hr-meeting.jpg" alt="Three colleagues in discussion around a meeting table" style={{ objectPosition: 'center' }} />
+              <Photo src="/images/team-high-five.jpg" alt="Colleagues celebrating with a high five over a laptop" style={{ objectPosition: 'center 30%' }} />
             </div>
             <div className={styles.workforceInset}>
               <Photo src="/images/professional.jpg" alt="An African professional seated by an office window" sizes="200px" />
@@ -128,20 +116,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= PHOTO RIBBON ================= */}
-      <PhotoMarquee />
-
       {/* ================= WHY AVENYRA (mosaic + list) ================= */}
       <section className={styles.section}>
         <div className={`${styles.wrap} ${styles.why}`}>
           <Reveal className={styles.mosaic}>
             <div className={`${styles.mosaicTile} ${styles.mosaicMain}`}>
-              <Photo src="/images/boardroom.jpg" className={styles.mosaicImg} alt="A full boardroom of African professionals in a planning session" />
+              <Photo src="/images/team-portrait.jpg" className={styles.mosaicImg} alt="A team of African professionals standing together in their office" style={{ objectPosition: 'center 25%' }} />
               <div className={styles.whyVisualTag}><PinIcon size={14} /> Based in Nairobi</div>
               <h3>Your workforce deserves the right support.</h3>
             </div>
             <div className={styles.mosaicTile}>
-              <Photo src="/images/mentoring.jpg" className={styles.mosaicImg} alt="A manager advising a colleague over a laptop" />
+              <Photo src="/images/warehouse-boxes.jpg" className={styles.mosaicImg} sizes="(max-width: 720px) 50vw, 240px" alt="A warehouse worker in a safety vest stacking boxes" />
             </div>
             <div className={`${styles.mosaicTile} ${styles.mosaicNote}`}>
               <TeamIcon size={20} />
@@ -242,8 +227,8 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal className={styles.collage}>
-            <Photo src="/images/interview-table.jpg" className={styles.collageA} sizes="(max-width: 980px) 50vw, 320px" alt="Two professionals in conversation at an interview table" />
-            <Photo src="/images/graduate.jpg" className={styles.collageB} sizes="(max-width: 980px) 50vw, 320px" alt="A graduate in cap and gown in Nairobi" />
+            <Photo src="/images/cafe-paperwork.jpg" className={styles.collageA} sizes="(max-width: 980px) 50vw, 320px" alt="A professional reviewing paperwork at a table" />
+            <Photo src="/images/phone-smile.jpg" className={styles.collageB} sizes="(max-width: 980px) 50vw, 320px" alt="A young professional smiling at her phone" />
             <Photo src="/images/remote-work.jpg" className={styles.collageC} sizes="(max-width: 980px) 50vw, 320px" alt="A professional smiling at her laptop" />
             <span className={styles.collageBadge}><CheckIcon /> CVs kept private</span>
           </Reveal>

@@ -19,8 +19,8 @@ export default function IndustriesPage() {
         eyebrow="Industries"
         title="Supporting organisations across diverse industries."
         lede="Each sector runs on different shifts, sites, procedures and funding cycles. Our support follows the way your sector actually works."
-        image="/images/team-computers.jpg"
-        imageAlt="African professionals working together at computers"
+        image="/images/meeting-room.jpg"
+        imageAlt="A team meeting around a table in a bright meeting room"
         badge={{ icon: <PinIcon size={18} />, title: 'Eight sectors', detail: 'Public, private and non-profit' }}
       />
 

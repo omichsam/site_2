@@ -57,8 +57,8 @@ export const industries: Industry[] = [
   {
     slug: "financial-services",
     title: "Banking & Financial Services",
-    image: "/images/desk-call.jpg",
-    imageAlt: "A finance professional on a phone call at a desk with documents",
+    image: "/images/banking-professional.jpg",
+    imageAlt: "A smiling banking professional at her desk",
     introduction:
       "Banks and other financial organisations depend on accurate administration and careful handling of employee information.",
     challenges: [
@@ -79,8 +79,8 @@ export const industries: Industry[] = [
   {
     slug: "healthcare",
     title: "Healthcare & Medical Services",
-    image: "/images/hospital-care.jpg",
-    imageAlt: "A clinician caring for a patient in a hospital ward",
+    image: "/images/nurse.jpg",
+    imageAlt: "A smiling nurse in blue scrubs with a stethoscope",
     introduction:
       "Healthcare employers need workforce support that respects professional duties, shift patterns and the sensitivity of the workplace.",
     challenges: [
@@ -123,8 +123,8 @@ export const industries: Industry[] = [
   {
     slug: "manufacturing-logistics",
     title: "Manufacturing & Logistics",
-    image: "/images/factory.jpg",
-    imageAlt: "A production worker at her station on a factory floor",
+    image: "/images/warehouse-worker.jpg",
+    imageAlt: "A warehouse worker in a safety vest carrying boxes",
     introduction:
       "Manufacturing and logistics employers often need both a stable core team and extra hands when volume changes.",
     challenges: [
@@ -145,8 +145,8 @@ export const industries: Industry[] = [
   {
     slug: "hospitality-retail",
     title: "Hospitality & Retail",
-    image: "/images/hospitality.jpg",
-    imageAlt: "Two cafe staff in aprons standing behind the counter",
+    image: "/images/chef-kitchen.jpg",
+    imageAlt: "A chef cooking over a flame in a restaurant kitchen",
     introduction:
       "Hospitality and retail teams change with trading hours, seasons and outlets. People processes need to keep up without becoming heavy.",
     challenges: [
@@ -167,8 +167,8 @@ export const industries: Industry[] = [
   {
     slug: "smes-corporates",
     title: "SMEs & Corporate Organisations",
-    image: "/images/small-team.jpg",
-    imageAlt: "A small team meeting around a table in a modern office",
+    image: "/images/lagos-meeting.jpg",
+    imageAlt: "A team meeting around a table in a bright office",
     introduction:
       "Growing companies and established corporates both need a people function that matches their stage, not a template copied from somewhere else.",
     challenges: [

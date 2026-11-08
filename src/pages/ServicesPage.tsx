@@ -19,8 +19,8 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title="Comprehensive human resource solutions."
         lede="From finding the right talent to managing everyday workforce requirements, Avenyra Global provides a range of HR services designed to support organisations at different stages of growth."
-        image="/images/flipchart-workshop.jpg"
-        imageAlt="An African facilitator leading a workshop at a flipchart"
+        image="/images/women-team.jpg"
+        imageAlt="A team of professionals standing together in their office"
         badge={{ icon: <CheckIcon />, title: 'Eight services', detail: 'Commission one, or combine them' }}
       />
 

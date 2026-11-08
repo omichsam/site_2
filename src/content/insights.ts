@@ -28,8 +28,8 @@ export const articles: Article[] = [
       "A useful HR outsourcing arrangement starts with a written scope: the tasks, the records, the approvals and the point of contact.",
     date: "2026-09-16",
     category: "HR Management",
-    image: "/images/consultation.jpg",
-    imageAlt: "An African professional listening during a consultation",
+    image: "/images/woman-laptop-office.jpg",
+    imageAlt: "A professional working at a laptop in a bright office",
     paragraphs: [
       "Outsourcing a piece of human resource work fails most often for a simple reason. The organisation and the provider never wrote down the same task list. One side hears “run our HR”. The other hears a defined set of administration. The gap appears later, usually in a hurry, around a leaver, a payroll change or an unhappy employee.",
       "Before any work moves, name the activities. Employee files, onboarding checklists, leave records, query handling and monthly reports are different jobs. Say which of them are included. Say which systems hold the record of truth. Say who inside the organisation may instruct a change, and who must approve it when the change affects pay or a contract.",
@@ -62,8 +62,8 @@ export const articles: Article[] = [
       "Policies help managers when the file shows what was communicated, what was decided and what happens next.",
     date: "2026-07-21",
     category: "Employment Practices",
-    image: "/images/advisory.jpg",
-    imageAlt: "Two African colleagues talking beside an office window",
+    image: "/images/nairobi-office.jpg",
+    imageAlt: "A professional typing at a laptop in a Nairobi office",
     paragraphs: [
       "Most organisations have a procedure for something that matters: probation, leave, grievance, discipline, or ending employment. The procedure is only as useful as the record behind it. A conversation that nobody noted is difficult to recall accurately three months later, and impossible to explain calmly if the matter becomes formal.",
       "A sufficient note is short. It records the date, who was present, what was discussed, what was decided and what was agreed as the next step. It does not need to be a transcript. It does need to be written while the memory is fresh and shared with the people who must act on it.",
@@ -79,8 +79,8 @@ export const articles: Article[] = [
       "Accurate pay depends less on heroics at month end and more on a cut-off, approved inputs and a named approver.",
     date: "2026-06-11",
     category: "Payroll",
-    image: "/images/payroll-laptop.jpg",
-    imageAlt: "A payroll specialist reviewing figures on a laptop",
+    image: "/images/laptop-focus.jpg",
+    imageAlt: "A professional concentrating on her laptop",
     paragraphs: [
       "Employees experience payroll as a promise: the right amount, on the agreed day, with a payslip they can read. That promise is kept by a calendar, not by a last-minute effort. The organisations that pay calmly have decided, in advance, when inputs close and who is allowed to approve them.",
       "List the inputs. New starters, leavers, unpaid leave, overtime, allowances, advances and any change to an account or a statutory detail. Each one needs an owner and a cut-off. An input that arrives after the cut-off waits for the next run unless the organisation has a written exception path.",
@@ -114,7 +114,7 @@ export const articles: Article[] = [
     date: "2026-04-08",
     category: "Leadership",
     image: "/images/hr-meeting.jpg",
-    imageAlt: "Three colleagues in a team meeting",
+    imageAlt: "A manager talking with two team members",
     paragraphs: [
       "Teams rarely need a speech. They need to know what matters this week, what “done” looks like, and how to say when something is blocking the work. Managers who provide those three things, steadily, are already practising leadership.",
       "Priorities should be few enough to remember. When everything is urgent, people choose for themselves, and the choices will not match. A short weekly note or a standing meeting with a real agenda is enough. Cancel it when there is nothing to decide, rather than filling it.",

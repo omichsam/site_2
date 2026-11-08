@@ -1,15 +1,23 @@
 {
-  "advisory": [
+  "banking-professional": [
     1400,
-    935
+    2100
   ],
   "boardroom": [
     1400,
     935
   ],
-  "clinic-consult": [
+  "cafe-paperwork": [
     1400,
     933
+  ],
+  "cafe-reading": [
+    1400,
+    933
+  ],
+  "chef-kitchen": [
+    1400,
+    2100
   ],
   "colleagues": [
     900,
@@ -27,13 +35,9 @@
     1400,
     935
   ],
-  "desk-call": [
+  "document-review": [
     1400,
-    935
-  ],
-  "factory": [
-    1400,
-    933
+    2097
   ],
   "flipchart-workshop": [
     1400,
@@ -47,13 +51,9 @@
     1400,
     935
   ],
-  "hospital-care": [
+  "home-study": [
     1400,
-    1134
-  ],
-  "hospitality": [
-    1400,
-    933
+    951
   ],
   "hr-laptop": [
     1200,
@@ -67,9 +67,45 @@
     1400,
     935
   ],
-  "mentoring": [
+  "lagos-interview": [
     1400,
-    788
+    933
+  ],
+  "lagos-meeting": [
+    1400,
+    933
+  ],
+  "lagos-team-laptop": [
+    1400,
+    933
+  ],
+  "laptop-discussion": [
+    1400,
+    933
+  ],
+  "laptop-floor": [
+    1400,
+    2097
+  ],
+  "laptop-focus": [
+    1400,
+    933
+  ],
+  "laptop-lounge": [
+    1400,
+    933
+  ],
+  "logistics-checking": [
+    1400,
+    933
+  ],
+  "logistics-clipboard": [
+    1400,
+    933
+  ],
+  "meeting-room": [
+    1400,
+    935
   ],
   "nairobi-office": [
     1400,
@@ -79,17 +115,25 @@
     1200,
     900
   ],
+  "nurse": [
+    1400,
+    2098
+  ],
   "open-office": [
     1400,
     935
   ],
-  "panel-meeting": [
+  "payroll-cash": [
+    1400,
+    933
+  ],
+  "phone-laptop": [
     1400,
     935
   ],
-  "payroll-laptop": [
-    1200,
-    675
+  "phone-smile": [
+    1400,
+    933
   ],
   "portrait": [
     1400,
@@ -99,6 +143,10 @@
     1200,
     1798
   ],
+  "reading-group": [
+    1400,
+    933
+  ],
   "remote-work": [
     1200,
     675
@@ -107,12 +155,52 @@
     900,
     601
   ],
+  "smiling-portrait": [
+    1400,
+    935
+  ],
+  "sofa-colleagues": [
+    1400,
+    933
+  ],
+  "sofa-laptop": [
+    1400,
+    935
+  ],
   "team-computers": [
     1600,
     1067
   ],
+  "team-high-five": [
+    1400,
+    933
+  ],
+  "team-portrait": [
+    1400,
+    933
+  ],
+  "team-standing": [
+    1400,
+    933
+  ],
   "training-session": [
     1400,
     933
+  ],
+  "warehouse-boxes": [
+    1400,
+    2133
+  ],
+  "warehouse-worker": [
+    1400,
+    968
+  ],
+  "woman-laptop-office": [
+    1400,
+    935
+  ],
+  "women-team": [
+    1400,
+    935
   ]
 }

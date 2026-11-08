@@ -80,8 +80,8 @@ export const services: Service[] = [
     delivery:
       "Each search starts with the role requirements, the location, the employment type and the decision timeline. We agree the channels and the shortlist format before applications are invited.",
     image: "/images/interview-table.jpg",
-    image2: "/images/handshake.jpg",
-    image2Alt: "Two professionals shaking hands after an interview",
+    image2: "/images/lagos-interview.jpg",
+    image2Alt: "A candidate in an interview in a modern Lagos office",
     imageAlt: "Two African professionals in conversation at an interview table",
     icon: "search",
   },
@@ -109,10 +109,10 @@ export const services: Service[] = [
     ],
     delivery:
       "We confirm the pay population, the cut-off, the approval step and the reports required. The organisation approves inputs before the run is closed.",
-    image: "/images/payroll-laptop.jpg",
-    image2: "/images/desk-call.jpg",
-    image2Alt: "An African professional on a phone call at a desk with documents",
-    imageAlt: "A payroll specialist reviewing figures on a laptop",
+    image: "/images/payroll-cash.jpg",
+    image2: "/images/phone-laptop.jpg",
+    image2Alt: "A professional working on a laptop while checking her phone",
+    imageAlt: "An African professional counting cash at an office desk",
     icon: "wallet",
   },
   {
@@ -140,8 +140,8 @@ export const services: Service[] = [
     delivery:
       "We agree which worker groups are in scope, which system holds the record, and who may approve an extension. Changes are confirmed in writing.",
     image: "/images/contract-signing.jpg",
-    image2: "/images/boardroom.jpg",
-    image2Alt: "African professionals in discussion around a boardroom table",
+    image2: "/images/logistics-clipboard.jpg",
+    image2Alt: "A smiling worker with a clipboard among stacked parcels",
     imageAlt: "A contract being signed at a desk",
     icon: "files",
   },
@@ -199,10 +199,10 @@ export const services: Service[] = [
     ],
     delivery:
       "Advice is given against the documents and facts supplied. We agree response times for routine queries and a separate path for urgent employee-relations matters.",
-    image: "/images/advisory.jpg",
-    image2: "/images/mentoring.jpg",
-    image2Alt: "A manager advising a colleague over a laptop",
-    imageAlt: "Two colleagues talking beside an office window",
+    image: "/images/lagos-team-laptop.jpg",
+    image2: "/images/sofa-colleagues.jpg",
+    image2Alt: "Two colleagues talking over a laptop",
+    imageAlt: "Three colleagues reviewing information on a laptop together",
     icon: "scale",
   },
   {
@@ -230,8 +230,8 @@ export const services: Service[] = [
     delivery:
       "We confirm the duties, the workplace requirements and the approval step. No one is presented as available to start until those points are clear.",
     image: "/images/open-office.jpg",
-    image2: "/images/remote-work.jpg",
-    image2Alt: "A professional working at a laptop with sticky notes on the wall",
+    image2: "/images/logistics-checking.jpg",
+    image2Alt: "A worker checking parcels against a list",
     imageAlt: "African colleagues working on laptops in an open office",
     icon: "clock",
   },
@@ -259,10 +259,10 @@ export const services: Service[] = [
     ],
     delivery:
       "We list the plans in scope, the eligibility rules we have been given, and the calendar for changes. Anything outside that list is referred back.",
-    image: "/images/panel-meeting.jpg",
-    image2: "/images/colleagues.jpg",
-    image2Alt: "Three colleagues talking around a meeting table",
-    imageAlt: "Three colleagues listening during a benefits briefing",
+    image: "/images/handshake.jpg",
+    image2: "/images/home-study.jpg",
+    image2Alt: "A smiling professional reviewing documents at her laptop",
+    imageAlt: "Two professionals shaking hands",
     icon: "heart",
   },
 ];

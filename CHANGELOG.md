@@ -4,6 +4,16 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 
 ## [Unreleased]
 
+### Changed
+- Photography now mostly shows African professionals: new photos for payroll, HR advisory, temporary staffing, benefits, banking, healthcare, manufacturing and logistics, hospitality and SMEs, plus office and team photos for the page sections.
+- Every photo is used for one purpose only (a service, industry or article photo appears only with that item). `node scripts/check-photos.mjs` checks this.
+- Career fields on the Careers page are icon cards with typical roles, instead of reusing industry photos.
+- People photos in tiles are framed a little higher so faces stay in view.
+
+### Removed
+- The "People at Work" photo gallery on About Us and the scrolling photo ribbon on the home page, which repeated photos used elsewhere.
+- The small face avatars under the home page buttons.
+
 ### Fixed
 - The vision and mission cards on About Us are about half as tall: the photos are now short banners.
 - Service photos on Our Services and the industry shortcuts keep their intended shape instead of showing at full photo height.

@@ -7,15 +7,6 @@ import { ArrowRightIcon, CheckIcon, CompassIcon, PinIcon, TeamIcon } from '../co
 import { company, principles, values } from '../content/company'
 import Photo from '../components/Photo'
 
-const GALLERY = [
-  { src: '/images/boardroom.jpg', alt: 'A boardroom planning session', cls: 'galleryWide' },
-  { src: '/images/portrait.jpg', alt: 'Portrait of a smiling African professional', cls: 'galleryTall' },
-  { src: '/images/training-session.jpg', alt: 'A facilitator presenting to colleagues', cls: '' },
-  { src: '/images/factory.jpg', alt: 'A production worker on a factory floor', cls: '' },
-  { src: '/images/hospitality.jpg', alt: 'Two cafe staff behind the counter', cls: '' },
-  { src: '/images/advisory.jpg', alt: 'Two colleagues talking beside an office window', cls: '' },
-]
-
 export default function AboutPage() {
 
   return (
@@ -45,8 +36,8 @@ export default function AboutPage() {
           </Reveal>
           <Reveal className={styles.collage}>
             <Photo src="/images/small-team.jpg" className={styles.collageA} alt="A small team meeting in a modern office" sizes="(max-width: 980px) 50vw, 320px" />
-            <Photo src="/images/professional.jpg" className={styles.collageB} alt="An African professional seated by an office window" sizes="(max-width: 980px) 50vw, 320px" />
-            <Photo src="/images/hr-laptop.jpg" className={styles.collageC} alt="An HR professional working on a laptop" sizes="(max-width: 980px) 50vw, 320px" />
+            <Photo src="/images/reading-group.jpg" className={styles.collageB} alt="Three colleagues reading through documents together" sizes="(max-width: 980px) 50vw, 320px" />
+            <Photo src="/images/laptop-lounge.jpg" className={styles.collageC} alt="A professional working on a laptop in a lounge" sizes="(max-width: 980px) 50vw, 320px" />
             <span className={styles.collageBadge}><TeamIcon /> {company.tagline}</span>
           </Reveal>
         </div>
@@ -56,7 +47,7 @@ export default function AboutPage() {
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={`${styles.wrap} ${styles.twoCards}`}>
           <Reveal className={`${styles.infoCard} ${styles.infoCardPhoto}`}>
-            <Photo src="/images/panel-meeting.jpg" alt="" />
+            <Photo src="/images/cafe-reading.jpg" alt="" sizes="(max-width: 980px) 100vw, 560px" />
             <span className={styles.solutionEyebrowDark}>Our Vision</span>
             <h2>Workplaces where people can do good work.</h2>
             <p>
@@ -65,7 +56,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal className={`${styles.infoCard} ${styles.infoCardDark} ${styles.infoCardPhoto}`} delay={120}>
-            <Photo src="/images/handshake.jpg" alt="" />
+            <Photo src="/images/team-standing.jpg" alt="" sizes="(max-width: 980px) 100vw, 560px" />
             <span className={styles.solutionEyebrow}>Our Mission</span>
             <h2>Practical support for people and organisations.</h2>
             <p>
@@ -103,7 +94,7 @@ export default function AboutPage() {
         <div className={`${styles.wrap} ${styles.workforceSplit}`}>
           <Reveal className={styles.workforceMedia}>
             <div className={styles.workforcePhoto}>
-              <Photo src="/images/nairobi-office.jpg" alt="A professional working at a laptop in a Nairobi office" />
+              <Photo src="/images/sofa-laptop.jpg" alt="A professional working on her laptop on an office sofa" />
             </div>
             <div className={styles.workforceBadge}>
               <span className={styles.workforceBadgeIcon}><CheckIcon /></span>
@@ -136,22 +127,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className={styles.section}>
-        <div className={styles.wrap}>
-          <Reveal className={styles.secHead}>
-            <div className={styles.eyebrow}>People at Work</div>
-            <h2>The workplaces we support.</h2>
-          </Reveal>
-          <Reveal className={styles.gallery}>
-            {GALLERY.map((photo) => (
-              <figure key={photo.src} className={photo.cls ? styles[photo.cls] : undefined}>
-                <Photo src={photo.src} alt={photo.alt} />
-              </figure>
-            ))}
-          </Reveal>
-        </div>
-      </section>
     </Layout>
   )
 }

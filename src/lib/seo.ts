@@ -212,12 +212,12 @@ export const PRERENDER_ROUTES: string[] = [
 /** Share images to generate: name → { title, kicker, photo }. Used by scripts/make-og.mjs. */
 export function ogImageSpecs() {
   const specs: Record<string, { title: string; kicker: string; photo: string }> = {
-    home: { title: 'Empowering people. Strengthening organisations.', kicker: 'People. Potential. Progress.', photo: '/images/boardroom.jpg' },
+    home: { title: 'Empowering people. Strengthening organisations.', kicker: 'People. Potential. Progress.', photo: '/images/team-high-five.jpg' },
     about: { title: 'A people-centred workforce partner.', kicker: 'About Avenyra Global', photo: '/images/colleagues.jpg' },
-    services: { title: 'Eight integrated HR services. One workforce partner.', kicker: 'Our Services', photo: '/images/flipchart-workshop.jpg' },
-    industries: { title: 'Supporting organisations across diverse industries.', kicker: 'Industries', photo: '/images/team-computers.jpg' },
-    careers: { title: 'Talent creates possibilities. Opportunities create futures.', kicker: 'Careers', photo: '/images/graduate.jpg' },
-    insights: { title: 'Practical notes on people and work.', kicker: 'Insights', photo: '/images/consultation.jpg' },
+    services: { title: 'Eight integrated HR services. One workforce partner.', kicker: 'Our Services', photo: '/images/women-team.jpg' },
+    industries: { title: 'Supporting organisations across diverse industries.', kicker: 'Industries', photo: '/images/meeting-room.jpg' },
+    careers: { title: 'Talent creates possibilities. Opportunities create futures.', kicker: 'Careers', photo: '/images/smiling-portrait.jpg' },
+    insights: { title: 'Practical notes on people and work.', kicker: 'Insights', photo: '/images/woman-laptop-office.jpg' },
     contact: { title: 'Let’s start a conversation.', kicker: 'Contact · Nairobi, Kenya', photo: '/images/nairobi-skyline.jpg' },
   }
   for (const s of services) specs[`service-${s.slug}`] = { title: s.title, kicker: 'Our Services', photo: s.image }
