@@ -5,11 +5,18 @@ import Header from './Header'
 import Footer from './Footer'
 import ScrollTopButton from './ScrollTopButton'
 import { useRouteMeta } from '../lib/usePageMeta'
+import { startClickTracking, trackPage } from '../lib/analytics'
 
 // Every page shares the header, the footer and the brand tokens on .page.
 export default function Layout({ children }: { children: ReactNode }) {
   const { pathname, hash } = useLocation()
   useRouteMeta()
+
+  // One page view per page visited (after useRouteMeta has set the title).
+  useEffect(() => {
+    startClickTracking()
+    trackPage(pathname)
+  }, [pathname])
 
   // New page: start at the top, or at the #anchor when one is given.
   useEffect(() => {

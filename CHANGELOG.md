@@ -4,6 +4,12 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-08
+
+### Added
+- Visit statistics with GoatCounter (anonymous, no cookies, no consent banner). Counts every page view, including moves between pages, and these actions: consultation and contact buttons, "Discuss this service", CV links, phone, email and WhatsApp clicks, and enquiry and CV form submissions (only the chosen category is recorded).
+- Privacy Policy explains the visit statistics.
+
 ## [1.1.0] - 2026-11-08
 
 Faster pages, better search results and link previews, and accessibility fixes.

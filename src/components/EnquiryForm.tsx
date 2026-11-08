@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import { CONTACT, enquiryTypes } from '../content/company'
 import { services } from '../content/services'
+import { trackEvent } from '../lib/analytics'
 
 type Field = { label: string; name: string; type?: string; required?: boolean; options?: readonly string[]; wide?: boolean; rows?: number }
 
@@ -51,6 +52,11 @@ export default function EnquiryForm({ kind = 'enquiry', defaultType }: { kind?: 
     const body = config.fields.map((f) => `${f.label}: ${data.get(f.name) || 'Not provided'}`).join('\n')
     const link = `mailto:${CONTACT.email}?subject=${encodeURIComponent(config.subject(data))}&body=${encodeURIComponent(body)}`
     setMailto(link)
+    // Count the submission. Only the chosen category is recorded, never personal details.
+    const detail = kind === 'cv'
+      ? String(data.get('category') || 'No field chosen')
+      : [data.get('enquiryType'), data.get('service')].filter(Boolean).join(' · ') || 'No type chosen'
+    trackEvent(kind === 'cv' ? 'form-cv-submitted' : 'form-enquiry-submitted', detail)
     window.location.href = link
   }
 

@@ -14,6 +14,7 @@ const DOCS = {
       'Do not send information you are not comfortable sharing for that purpose. You may ask us to correct or delete an enquiry or a CV by writing to us and stating that your message is a privacy request, including the email address you used originally.',
       'Data is kept for operational follow-up, and access to enquiries and CVs is limited to the people who handle them.',
       'This website does not sell personal information. It does not place advertising trackers. The forms on this website prepare an email on your own device; nothing is sent until you choose to send it.',
+      'We count visits with GoatCounter, a privacy-friendly statistics service. It records which pages are viewed, which buttons are clicked and the referring website, without cookies and without identifying you. Your IP address is not stored. When you use a form, only the type of enquiry or career field is counted, never what you type.',
     ],
   },
   terms: {
