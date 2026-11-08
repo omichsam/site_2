@@ -1306,3 +1306,15 @@
 @media (min-width: 981px) and (prefers-reduced-motion: reduce) {
   .toTop, .toTopVisible { transform: translate(0, -50%); }
 }
+
+/* ---------- Rendering performance ----------
+   Sections below the first screen are laid out only when they come near the
+   viewport, which cuts the work the browser does while the page first loads.
+   The intrinsic size keeps the scrollbar stable until each section renders. */
+.page main > section:not(:first-child),
+.page main > div:not(:first-child),
+.page main > article > section,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}

@@ -182,7 +182,7 @@ export default function HomePage() {
           </Reveal>
           <div className={styles.industryTiles}>
             {industries.map((industry, i) => (
-              <Reveal key={industry.slug} delay={(i % 4) * 90} className={i === 0 || i === 7 ? styles.industryTileWide : undefined}>
+              <Reveal key={industry.slug} delay={(i % 4) * 90} className={[0, 3, 4, 7].includes(i) ? styles.industryTileWide : undefined}>
                 <Link to={`/industries#${industry.slug}`} className={styles.industryTile}>
                   <Photo src={industry.image} alt={industry.imageAlt} sizes="(max-width: 720px) 100vw, 560px" />
                   <span className={styles.industryTileBody}>

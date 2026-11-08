@@ -13,10 +13,21 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   // New page: start at the top, or at the #anchor when one is given.
   useEffect(() => {
-    if (hash) {
-      document.getElementById(hash.slice(1))?.scrollIntoView()
-    } else {
-      window.scrollTo(0, 0)
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+      return
+    }
+    const id = decodeURIComponent(hash.slice(1))
+    const jump = () => document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' })
+    jump()
+    // Sections below the fold are laid out only as they near the screen
+    // (content-visibility), so their real heights arrive after the first jump.
+    // Jump again once they have settled so the anchor lands exactly.
+    const frame = requestAnimationFrame(jump)
+    const timers = [150, 450].map((ms) => window.setTimeout(jump, ms))
+    return () => {
+      cancelAnimationFrame(frame)
+      timers.forEach((t) => window.clearTimeout(t))
     }
   }, [pathname, hash])
 

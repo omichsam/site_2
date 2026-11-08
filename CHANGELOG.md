@@ -19,11 +19,14 @@ Faster pages, better search results and link previews, and accessibility fixes.
 ### Changed
 - Photos are served as responsive WebP in three sizes, so phones download much smaller files. Every photo has its size set, so the layout no longer jumps while images load.
 - The main photo at the top of each page loads first; the rest load as you scroll.
+- Sections below the first screen are laid out only as they come near the screen, which roughly halves the browser's work while a page first loads.
+- Industry tiles on the home page now fill three complete rows.
 
 ### Fixed
 - Pages such as `/services/payroll-management` opened directly no longer return a "not found" status.
 - Small orange text (section labels, "Learn more" links) now meets contrast guidelines.
 - The logo link's accessible name now matches its visible text.
+- Links to a section (for example an industry from the home page) land just below the header instead of 90px lower.
 
 ## [1.0.0] - 2026-11-08
 
