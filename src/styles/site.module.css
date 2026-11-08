@@ -1089,8 +1089,8 @@
 .zigzagFlip .zigzagMedia { order: 2; }
 .zigzagMedia { position: relative; padding: 0 40px 40px 0; }
 .zigzagFlip .zigzagMedia { padding: 0 0 40px 40px; }
-.zigzagMain { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; box-shadow: 0 34px 64px -34px rgba(39, 30, 96, .55); }
-.zigzagInset { position: absolute; right: 0; bottom: 0; width: 42%; aspect-ratio: 1; object-fit: cover; border-radius: 18px; border: 6px solid var(--cream); box-shadow: 0 24px 44px -22px rgba(39, 30, 96, .5); transition: transform .5s ease; }
+.zigzagMain { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; box-shadow: 0 34px 64px -34px rgba(39, 30, 96, .55); }
+.zigzagInset { position: absolute; right: 0; bottom: 0; width: 42%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 18px; border: 6px solid var(--cream); box-shadow: 0 24px 44px -22px rgba(39, 30, 96, .5); transition: transform .5s ease; }
 .zigzagFlip .zigzagInset { right: auto; left: 0; }
 .zigzag:hover .zigzagInset { transform: translateY(-6px) rotate(-1.5deg); }
 .zigzagText h2 { font-size: clamp(26px, 2.8vw, 34px); margin: 10px 0 14px; }
@@ -1113,7 +1113,8 @@
 .infoCardDark .checkList svg { color: #F4A06B; }
 .infoCardDark .infoCardIcon { background: rgba(255, 255, 255, .1); color: #F4A06B; }
 .infoCardPhoto { padding-top: 0; }
-.infoCardPhoto img { width: calc(100% + 68px); max-width: none; margin: 0 -34px 26px; aspect-ratio: 16 / 8; object-fit: cover; }
+/* A short banner photo, so the vision and mission cards stay compact. */
+.infoCardPhoto img { width: calc(100% + 68px); max-width: none; height: 170px; margin: 0 -34px 22px; object-fit: cover; object-position: center 35%; }
 .page .numberList { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
 .numberList li { display: flex; gap: 16px; align-items: baseline; padding: 13px 0; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.5; color: var(--ink); }
 .numberList li span { flex-shrink: 0; font-family: var(--label); font-weight: 700; font-size: 12px; color: var(--orangeText); }
@@ -1139,7 +1140,7 @@
 /* ---------- Industries page ---------- */
 .sectorJump { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
 .page a.sectorJumpItem { display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; line-height: 1.3; color: var(--indigo); }
-.sectorJumpItem img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; transition: transform .35s ease, box-shadow .35s ease; }
+.sectorJumpItem img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 16px; transition: transform .35s ease, box-shadow .35s ease; }
 .sectorJumpItem:hover img { transform: translateY(-4px); box-shadow: 0 18px 30px -18px rgba(39, 30, 96, .55); }
 .page a.sectorJumpItem:hover { color: var(--orange); }
 .industryRow { display: grid; grid-template-columns: .95fr 1.05fr; gap: 64px; align-items: center; }

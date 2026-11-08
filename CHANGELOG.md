@@ -4,6 +4,10 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 
 ## [Unreleased]
 
+### Fixed
+- The vision and mission cards on About Us are about half as tall: the photos are now short banners.
+- Service photos on Our Services and the industry shortcuts keep their intended shape instead of showing at full photo height.
+
 ## [1.2.0] - 2026-11-08
 
 ### Added
