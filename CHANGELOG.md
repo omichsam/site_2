@@ -4,6 +4,9 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 
 ## [Unreleased]
 
+### Added
+- Floating return-to-top button on every page, with a ring that fills as you scroll.
+
 ## [1.0.0] - 2026-11-08
 
 First release.

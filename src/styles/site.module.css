@@ -1279,3 +1279,15 @@
   .workforceInset { width: 30%; top: -14px; border-width: 4px; }
 }
 .footLegal span { font-size: 13px; color: rgba(255,255,255,.62); }
+
+/* ---------- Floating return-to-top button ---------- */
+.toTop { position: fixed; right: 24px; bottom: 24px; z-index: 60; display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; padding: 0; border: 0; border-radius: 50%; background: var(--indigo); color: var(--white); box-shadow: 0 16px 32px -12px rgba(39, 30, 96, .6); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(16px) scale(.9); transition: opacity .3s ease, transform .3s ease, visibility .3s, background .2s ease; }
+.toTopVisible { opacity: 1; visibility: visible; transform: none; }
+.toTop:hover { background: var(--orange); }
+.toTop:hover .toTopRing circle:last-child { stroke: var(--white); }
+.toTop:hover > svg:last-child { transform: translateY(-2px); }
+.toTop > svg:last-child { position: relative; transition: transform .2s ease; }
+.toTopRing { position: absolute; inset: 0; }
+.toTop:focus-visible { outline: 3px solid var(--periwinkle); outline-offset: 3px; }
+@media (max-width: 560px) { .toTop { right: 16px; bottom: 16px; width: 48px; height: 48px; } .toTopRing { width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .toTop { transition: opacity .2s ease, visibility .2s; transform: none; } }

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import Header from './Header'
 import Footer from './Footer'
+import ScrollTopButton from './ScrollTopButton'
 
 // Every page shares the header, the footer and the brand tokens on .page.
 export default function Layout({ children }: { children: ReactNode }) {
@@ -23,6 +24,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Header />
       <main id="main">{children}</main>
       <Footer />
+      <ScrollTopButton />
     </div>
   )
 }
