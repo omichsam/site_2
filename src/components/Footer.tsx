@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import { LogoMark, ArrowRightIcon, PinIcon, PhoneIcon, EnvelopeIcon } from './icons'
-import { services } from '../content/services'
+import { pillars } from '../content/pillars'
 import { company, CONTACT } from '../content/company'
 import { currentRelease } from '../content/releases'
 
@@ -18,12 +18,12 @@ export default function Footer() {
         <div className={styles.footCta}>
           <div>
             <span className={styles.footCtaEyebrow}>Let&rsquo;s talk</span>
-            <h2>Let&rsquo;s build a stronger workforce together.</h2>
-            <p>Every organisation deserves the right people and the right HR support.</p>
+            <h2>Ready to build your team in Kenya?</h2>
+            <p>Tell us which roles you need, how your team will work and where you need support. We will help you shape the right recruitment, staffing and workforce management approach.</p>
           </div>
           <div className={styles.footCtaActions}>
             <Link to="/contact?enquiry=consultation" className={`${styles.btn} ${styles.btnPrimary}`}>
-              Request a Consultation <ArrowRightIcon />
+              Request a Solution <ArrowRightIcon />
             </Link>
             <a href={`mailto:${CONTACT.email}`} className={styles.footCtaMail}>
               <EnvelopeIcon /> {CONTACT.email}
@@ -47,9 +47,10 @@ export default function Footer() {
           <nav className={styles.footCol} aria-label="Services">
             <h2>Services</h2>
             <ul>
-              {services.slice(0, 6).map((service) => (
-                <li key={service.slug}><Link to={`/services/${service.slug}`}>{service.title}</Link></li>
+              {pillars.map((pillar) => (
+                <li key={pillar.slug}><Link to={`/services/${pillar.slug}`}>{pillar.title}</Link></li>
               ))}
+              <li><Link to="/services/recruitment-talent-acquisition">Recruitment</Link></li>
               <li><Link to="/services">All services</Link></li>
             </ul>
           </nav>

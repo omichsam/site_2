@@ -3,16 +3,13 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import { ArrowRightIcon, PinIcon } from './icons'
 import ServiceGlyph from './ServiceGlyph'
-import type { ServiceIcon } from '../content/services'
+import { entryPoints } from '../content/pillars'
 
 const ORANGE = '#DF6E28'
 const PERIWINKLE = '#7149CC'
 
-const HIGHLIGHTS: { title: string; detail: string; icon: ServiceIcon; tone: string; to: string }[] = [
-  { title: 'HR, outsourced.', detail: 'A defined people function, without building it in-house.', icon: 'briefcase', tone: ORANGE, to: '/services/hr-outsourcing' },
-  { title: 'Talent, found.', detail: 'Structured search and selection, from brief to shortlist.', icon: 'search', tone: PERIWINKLE, to: '/services/recruitment-talent-acquisition' },
-  { title: 'Payroll, on schedule.', detail: 'Pay runs from approved inputs, on a predictable calendar.', icon: 'wallet', tone: ORANGE, to: '/services/payroll-management' },
-]
+// The three most common starting points, each leading to its service content.
+const HIGHLIGHTS = entryPoints.map((entry, i) => ({ ...entry, tone: i === 1 ? PERIWINKLE : ORANGE }))
 
 const STEP_MS = 3000
 
@@ -64,9 +61,9 @@ export default function HeroShowcase() {
         </ol>
 
         <div className={styles.heroPanelFoot}>
-          <span>HR · Recruitment · Payroll · Workforce</span>
+          <span>Four pillars · One Kenya-based partner</span>
           <Link to="/services" className={styles.heroPanelLink}>
-            All services <ArrowRightIcon size={14} />
+            All solutions <ArrowRightIcon size={14} />
           </Link>
         </div>
       </div>

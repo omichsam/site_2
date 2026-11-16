@@ -4,9 +4,8 @@ import Layout from '../components/Layout'
 import Reveal from '../components/Reveal'
 import PageHero from '../components/PageHero'
 import ServiceGlyph from '../components/ServiceGlyph'
-import { SERVICE_AREA } from '../components/ServicesTabs'
 import { ArrowRightIcon, CheckIcon } from '../components/icons'
-import { services } from '../content/services'
+import { entryPoints, pillars, pillarServices } from '../content/pillars'
 import { process } from '../content/company'
 import Photo from '../components/Photo'
 
@@ -17,24 +16,38 @@ export default function ServicesPage() {
       <PageHero
         crumbs={[{ label: 'Our Services' }]}
         eyebrow="Our Services"
-        title="Comprehensive human resource solutions."
-        lede="From finding the right talent to managing everyday workforce requirements, Avenyra Global provides a range of HR services designed to support organisations at different stages of growth."
+        title="Hire Kenyan talent. Build your team. Support your growth."
+        lede="Avenyra Global helps international businesses access Kenyan talent and establish the workforce support needed to grow. From recruiting individual professionals to building dedicated remote teams, we bring together talent acquisition, employment coordination, HR operations and workforce technology."
         image="/images/women-team.jpg"
         imageAlt="A team of professionals standing together in their office"
-        badge={{ icon: <CheckIcon />, title: 'Eight services', detail: 'Commission one, or combine them' }}
+        badge={{ icon: <CheckIcon />, title: 'Four pillars', detail: 'Engage one, or combine them' }}
       />
 
-      {/* Quick index of all eight */}
+      {/* Three common starting points, then the four pillars */}
       <section className={styles.section} style={{ paddingTop: 56 }}>
         <div className={styles.wrap}>
+          <nav className={styles.entryLinks} aria-label="Where to start">
+            {entryPoints.map((entry) => (
+              <Link key={entry.to} to={entry.to} className={styles.entryLink}>
+                <span className={styles.entryLinkIcon}><ServiceGlyph name={entry.icon} /></span>
+                <span>
+                  <b>{entry.title}</b>
+                  <small>{entry.detail}</small>
+                </span>
+                <ArrowRightIcon />
+              </Link>
+            ))}
+          </nav>
+
+          <p className={styles.pillarNote}>Our four service pillars can be engaged individually or combined around your business needs.</p>
           <div className={styles.serviceIndex}>
-            {services.map((service, i) => (
-              <Reveal key={service.slug} delay={(i % 4) * 80}>
-                <a href={`#${service.slug}`} className={styles.serviceIndexCard}>
-                  <span className={styles.serviceIndexIcon}><ServiceGlyph name={service.icon} /></span>
+            {pillars.map((pillar, i) => (
+              <Reveal key={pillar.slug} delay={i * 80}>
+                <a href={`#${pillar.slug}`} className={styles.serviceIndexCard}>
+                  <span className={styles.serviceIndexIcon}><ServiceGlyph name={pillar.icon} /></span>
                   <span className={styles.serviceIndexNum}>{String(i + 1).padStart(2, '0')}</span>
-                  <b>{service.title}</b>
-                  <small>{service.summary}</small>
+                  <b>{pillar.title}</b>
+                  <small>{pillar.summary}</small>
                 </a>
               </Reveal>
             ))}
@@ -42,32 +55,44 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Each service as an alternating photo and text row */}
+      {/* Each pillar as an alternating photo and text row */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.wrap}>
-          {services.map((service, i) => (
-            <Reveal key={service.slug} id={service.slug} className={`${styles.zigzag} ${i % 2 ? styles.zigzagFlip : ''}`}>
-              <div className={styles.zigzagMedia}>
-                <Photo src={service.image} className={styles.zigzagMain} alt={service.imageAlt} />
-                <Photo src={service.image2} className={styles.zigzagInset} alt={service.image2Alt} sizes="240px" />
-              </div>
-              <div className={styles.zigzagText}>
-                <span className={styles.solutionEyebrowDark}>
-                  {String(i + 1).padStart(2, '0')} · {SERVICE_AREA[service.icon]}
-                </span>
-                <h2>{service.title}</h2>
-                <p>{service.introduction}</p>
-                <ul className={styles.checkList}>
-                  {service.benefits.slice(0, 3).map((benefit) => (
-                    <li key={benefit}><CheckIcon size={16} /> {benefit}</li>
-                  ))}
-                </ul>
-                <Link to={`/services/${service.slug}`} className={styles.workforceLink}>
-                  Explore {service.title} <ArrowRightIcon />
-                </Link>
-              </div>
-            </Reveal>
-          ))}
+          {pillars.map((pillar, i) => {
+            const related = pillarServices(pillar)
+            return (
+              <Reveal key={pillar.slug} id={pillar.slug} className={`${styles.zigzag} ${i % 2 ? styles.zigzagFlip : ''}`}>
+                <div className={styles.zigzagMedia}>
+                  <Photo src={pillar.image} className={styles.zigzagMain} alt={pillar.imageAlt} />
+                  <Photo src={pillar.image2} className={styles.zigzagInset} alt={pillar.image2Alt} sizes="240px" />
+                </div>
+                <div className={styles.zigzagText}>
+                  <span className={styles.solutionEyebrowDark}>
+                    {String(i + 1).padStart(2, '0')} · {pillar.title}
+                  </span>
+                  <h2>{pillar.headline}</h2>
+                  <p>{pillar.intro}</p>
+                  <ul className={styles.checkList}>
+                    {pillar.includes.map((item) => (
+                      <li key={item}><CheckIcon size={16} /> {item}</li>
+                    ))}
+                  </ul>
+                  <p className={styles.idealFor}><b>Ideal for:</b> {pillar.idealFor}</p>
+                  {related.length > 0 && (
+                    <p className={styles.pillarServices}>
+                      <span>Services:</span>
+                      {related.map((service) => (
+                        <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>
+                      ))}
+                    </p>
+                  )}
+                  <Link to={`/services/${pillar.slug}`} className={styles.workforceLink}>
+                    Explore {pillar.title} <ArrowRightIcon />
+                  </Link>
+                </div>
+              </Reveal>
+            )
+          })}
         </div>
       </section>
 

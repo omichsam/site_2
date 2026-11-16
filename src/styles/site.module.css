@@ -1061,6 +1061,24 @@
 
 /* ---------- Services page ---------- */
 .serviceIndex { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+/* Three starting points above the pillars on Our Services. */
+.entryLinks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+.page a.entryLink { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-radius: 14px; background: var(--indigo); color: var(--white); transition: background .2s ease, transform .2s ease; }
+.page a.entryLink:hover { background: var(--nightPurple); transform: translateY(-2px); }
+.entryLink > span:nth-child(2) { flex: 1; }
+.entryLink b { display: block; font-family: var(--display); font-size: 17px; line-height: 1.3; }
+.entryLink small { display: block; margin-top: 3px; font-size: 13.5px; color: rgba(255,255,255,.72); }
+.entryLink > svg { flex-shrink: 0; color: var(--orange); }
+.entryLinkIcon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; background: rgba(255,255,255,.1); color: var(--orange); }
+.page .pillarNote { margin: 0 0 18px; color: var(--inkSoft); font-size: 15px; }
+.page .idealFor { margin: 18px 0 0; font-size: 15px; }
+.page .idealFor b { color: var(--indigo); }
+.page .pillarServices { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 14px 0 22px; font-size: 14px; }
+.pillarServices span { font-weight: 600; color: var(--inkSoft); }
+.page .pillarServices a { padding: 4px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); color: var(--indigo); font-weight: 600; transition: border-color .2s ease; }
+.page .pillarServices a:hover { border-color: var(--orange); }
+.infoCardDark p { color: rgba(255,255,255,.82); line-height: 1.7; margin: 0 0 16px; }
+.page .infoCardDark .checkList a { color: var(--white); text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 3px; }
 .serviceIndex > div { height: 100%; }
 .page a.serviceIndexCard { position: relative; display: flex; flex-direction: column; height: 100%; padding: 22px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
 .page a.serviceIndexCard:hover { transform: translateY(-4px); border-color: rgba(223, 110, 40, .4); box-shadow: 0 24px 44px -28px rgba(39, 30, 96, .45); }
@@ -1229,6 +1247,7 @@
 @media (max-width: 1080px) {
   .sectorJump { grid-template-columns: repeat(4, 1fr); }
   .serviceIndex { grid-template-columns: repeat(2, 1fr); }
+  .entryLinks { grid-template-columns: 1fr; }
 }
 @media (max-width: 980px) {
   .pageHeroGrid, .careersSplit, .zigzag, .industryRow, .deliveryRow, .twoCards { grid-template-columns: minmax(0, 1fr); gap: 40px; }

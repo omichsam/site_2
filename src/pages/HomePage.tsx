@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className={styles.wrap}>
           <span className={styles.stripLabel}>{company.tagline}</span>
           <div className={styles.stripItems}>
-            {['HR Outsourcing', 'Recruitment', 'Payroll Management', 'Workforce Solutions'].map((item) => (
+            {['Global Workforce', 'Remote Teams', 'Human Capital & HR', 'Workforce Technology'].map((item) => (
               <span key={item}>{item}</span>
             ))}
           </div>
@@ -106,9 +106,9 @@ export default function HomePage() {
           <Reveal className={`${styles.secHead} ${styles.secHeadRow}`}>
             <div>
               <div className={styles.eyebrow}>Our Services</div>
-              <h2>Eight integrated services. One workforce partner.</h2>
+              <h2>Four integrated workforce solutions. One Kenya-based partner.</h2>
             </div>
-            <p>From finding the right talent to managing everyday workforce requirements, at every stage of growth.</p>
+            <p>Engage one pillar, or combine them around how your team will work in Kenya.</p>
           </Reveal>
           <Reveal>
             <ServicesTabs />

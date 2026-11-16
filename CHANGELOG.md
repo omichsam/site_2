@@ -4,6 +4,19 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 
 Each release is also named after a place in Kenya, in alphabetical order (see [docs/VERSIONING.md](docs/VERSIONING.md)). The name is shown in the footer and on the What's New page.
 
+## [Unreleased]
+
+### Changed
+- Services are organised as four pillars: Global Workforce Solutions (with partner-enabled EOR support), Remote Staffing & Managed Workforce, Human Capital & HR Solutions, and Workforce Technology & Transformation. The eight existing services stay, each with its own page, grouped beneath their pillar.
+- Home page: the services tabs show the four pillars with three key services each, the hero panel offers the three entry points, and the heading reads "Four integrated workforce solutions. One Kenya-based partner."
+- Our Services: new opening, three entry links (Recruit Talent in Kenya, Build a Remote Team, Establish Workforce Operations in Kenya) above the pillars.
+- Enquiry form: choose a pillar or "Help me choose", plus roles, number of people, team location and intended start date. Pillar pages preselect their pillar.
+- Footer: the call to action reads "Ready to build your team in Kenya?" and the Services column lists the pillars and Recruitment.
+
+### Added
+- A page for each pillar, including the new Workforce Technology & Transformation pillar with its own photos.
+- Link-preview images and structured data for the four pillar pages.
+
 ## [1.3.0] "Diani" - 2026-11-16
 
 ### Added

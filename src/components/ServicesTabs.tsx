@@ -2,7 +2,8 @@ import { useRef, useState, type KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import { ArrowRightIcon } from './icons'
-import { services, type ServiceIcon } from '../content/services'
+import type { ServiceIcon } from '../content/services'
+import { pillars } from '../content/pillars'
 import Photo from './Photo'
 
 export const SERVICE_AREA: Record<ServiceIcon, string> = {
@@ -14,17 +15,19 @@ export const SERVICE_AREA: Record<ServiceIcon, string> = {
   scale: 'Advisory',
   clock: 'Staffing',
   heart: 'Benefits',
+  globe: 'Global Workforce',
+  monitor: 'Remote Teams',
+  chip: 'Technology',
 }
 
-// The eight services as tabs beside one large photo that crossfades between
-// them. Only the selected tab shows its summary, so eight fit in the height of
-// the photo panel.
+// The four service pillars as tabs beside one large photo that crossfades
+// between them. Only the selected tab shows its summary.
 export default function ServicesTabs() {
   const [active, setActive] = useState(0)
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
 
   const onKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    const last = services.length - 1
+    const last = pillars.length - 1
     const next =
       event.key === 'ArrowDown' || event.key === 'ArrowRight' ? (active === last ? 0 : active + 1)
       : event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? (active === 0 ? last : active - 1)
@@ -37,12 +40,12 @@ export default function ServicesTabs() {
     tabRefs.current[next]?.focus()
   }
 
-  const service = services[active]
+  const pillar = pillars[active]
 
   return (
     <div className={`${styles.solutions} ${styles.solutionsCompact}`}>
-      <div className={styles.solutionTabs} role="tablist" aria-label="Our services" aria-orientation="vertical">
-        {services.map((item, i) => (
+      <div className={styles.solutionTabs} role="tablist" aria-label="Our service pillars" aria-orientation="vertical">
+        {pillars.map((item, i) => (
           <button
             key={item.slug}
             id={`tab-${item.slug}`}
@@ -66,9 +69,9 @@ export default function ServicesTabs() {
         ))}
       </div>
 
-      <div id="service-panel" role="tabpanel" aria-labelledby={`tab-${service.slug}`} className={styles.solutionPanel}>
+      <div id="service-panel" role="tabpanel" aria-labelledby={`tab-${pillar.slug}`} className={styles.solutionPanel}>
         <div className={styles.solutionMedia}>
-          {services.map((item, i) => (
+          {pillars.map((item, i) => (
             <Photo
               key={item.slug}
               src={item.image}
@@ -79,19 +82,18 @@ export default function ServicesTabs() {
           ))}
         </div>
         {/* Keyed so the text replays its entrance whenever the tab changes. */}
-        <div key={service.slug} className={styles.solutionBody}>
+        <div key={pillar.slug} className={styles.solutionBody}>
           <span className={styles.solutionEyebrow}>
-            {String(active + 1).padStart(2, '0')} · {SERVICE_AREA[service.icon]}
+            {String(active + 1).padStart(2, '0')} · {pillar.title}
           </span>
-          <h3>{service.title}</h3>
-          <p>{service.introduction}</p>
+          <h3>{pillar.headline}</h3>
           <ul className={styles.solutionList}>
-            {service.activities.slice(0, 3).map((activity) => (
-              <li key={activity}>{activity}</li>
+            {pillar.includes.slice(0, 3).map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
-          <Link to={`/services/${service.slug}`} className={styles.solutionLink}>
-            Explore this service <ArrowRightIcon />
+          <Link to={`/services/${pillar.slug}`} className={styles.solutionLink}>
+            Explore {pillar.title} <ArrowRightIcon />
           </Link>
         </div>
       </div>

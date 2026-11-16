@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/site.module.css'
 import { CONTACT, enquiryTypes } from '../content/company'
-import { services } from '../content/services'
+import { headcountBands, pillars } from '../content/pillars'
 import { trackEvent } from '../lib/analytics'
 
 type Field = { label: string; name: string; type?: string; required?: boolean; options?: readonly string[]; wide?: boolean; rows?: number }
@@ -18,7 +18,11 @@ const FORMS: Record<'enquiry' | 'cv', { subject: (data: FormData) => string; fie
       { label: 'Telephone', name: 'phone', type: 'tel' },
       { label: 'Organisation', name: 'organisation' },
       { label: 'Enquiry type', name: 'enquiryType', options: enquiryTypes },
-      { label: 'Service of interest', name: 'service', options: [...services.map((s) => s.title), 'Not sure yet'] },
+      { label: 'Solution of interest', name: 'solution', options: [...pillars.map((p) => p.title), 'Help me choose'] },
+      { label: 'Roles you need', name: 'roles' },
+      { label: 'Number of people', name: 'headcount', options: headcountBands },
+      { label: 'Where the team will be based', name: 'teamLocation' },
+      { label: 'Intended start date', name: 'startDate', type: 'date' },
       { label: 'How can we help?', name: 'message', wide: true, rows: 5, required: true },
     ],
   },
@@ -42,7 +46,8 @@ const FORMS: Record<'enquiry' | 'cv', { subject: (data: FormData) => string; fie
 
 // Enquiry and CV forms. With no backend yet, both open a pre-filled email
 // draft addressed to Avenyra Global.
-export default function EnquiryForm({ kind = 'enquiry', defaultType }: { kind?: 'enquiry' | 'cv'; defaultType?: string }) {
+export default function EnquiryForm({ kind = 'enquiry', defaultType, defaultSolution }: { kind?: 'enquiry' | 'cv'; defaultType?: string; defaultSolution?: string }) {
+  const defaults: Record<string, string | undefined> = { enquiryType: defaultType, solution: defaultSolution }
   const config = FORMS[kind]
   const [mailto, setMailto] = useState<string | null>(null)
 
@@ -55,7 +60,7 @@ export default function EnquiryForm({ kind = 'enquiry', defaultType }: { kind?: 
     // Count the submission. Only the chosen category is recorded, never personal details.
     const detail = kind === 'cv'
       ? String(data.get('category') || 'No field chosen')
-      : [data.get('enquiryType'), data.get('service')].filter(Boolean).join(' · ') || 'No type chosen'
+      : [data.get('enquiryType'), data.get('solution')].filter(Boolean).join(' · ') || 'No type chosen'
     trackEvent(kind === 'cv' ? 'form-cv-submitted' : 'form-enquiry-submitted', detail)
     window.location.href = link
   }
@@ -74,7 +79,7 @@ export default function EnquiryForm({ kind = 'enquiry', defaultType }: { kind?: 
           <label key={field.name} className={`${styles.formField} ${field.wide ? styles.formFieldWide : ''}`}>
             <span>{field.label}{field.required ? ' *' : ''}</span>
             {field.options ? (
-              <select name={field.name} defaultValue={field.name === 'enquiryType' && defaultType ? defaultType : ''}>
+              <select name={field.name} defaultValue={defaults[field.name] ?? ''}>
                 <option value="">Select</option>
                 {field.options.map((option) => <option key={option} value={option}>{option}</option>)}
               </select>

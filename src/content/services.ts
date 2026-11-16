@@ -6,7 +6,10 @@ export type ServiceIcon =
   | "graduation"
   | "scale"
   | "clock"
-  | "heart";
+  | "heart"
+  | "globe"
+  | "monitor"
+  | "chip";
 
 export type Service = {
   slug: string;

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import type { ServiceIcon } from '../content/services'
 
-// Line icons for the eight services, drawn on a 24px grid in currentColor.
+// Line icons for the services and pillars, drawn on a 24px grid in currentColor.
 const PATHS: Record<ServiceIcon, ReactNode> = {
   briefcase: (
     <>
@@ -53,6 +53,26 @@ const PATHS: Record<ServiceIcon, ReactNode> = {
     <>
       <path d="M12 19.5s-7.5-4.4-7.5-10A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7.5 2.5c0 5.6-7.5 10-7.5 10Z" />
       <path d="m9 12 2 2 4-4" />
+    </>
+  ),
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M3.5 12h17M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5s-1.2 6.1-3.5 8.5c-2.3-2.4-3.5-5.2-3.5-8.5s1.2-6.1 3.5-8.5Z" />
+    </>
+  ),
+  monitor: (
+    <>
+      <rect x="3" y="4.5" width="18" height="12" rx="2" />
+      <path d="M8.5 20h7M12 16.5V20" />
+      <circle cx="12" cy="9.5" r="2" />
+      <path d="M8.8 14c.6-1.3 1.8-2 3.2-2s2.6.7 3.2 2" />
+    </>
+  ),
+  chip: (
+    <>
+      <rect x="6.5" y="6.5" width="11" height="11" rx="2" />
+      <path d="M10 10h4v4h-4zM9.5 3v3.5M14.5 3v3.5M9.5 17.5V21M14.5 17.5V21M3 9.5h3.5M3 14.5h3.5M17.5 9.5H21M17.5 14.5H21" />
     </>
   ),
 }

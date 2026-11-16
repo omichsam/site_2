@@ -4,6 +4,7 @@
 // two can never disagree.
 import { company, CONTACT } from '../content/company'
 import { services } from '../content/services'
+import { getPillar, pillarOf, pillars } from '../content/pillars'
 import { articles } from '../content/insights'
 
 /** The public address the site is served from, without a trailing slash. Set VITE_SITE_URL for a custom domain. */
@@ -48,7 +49,7 @@ const ORGANIZATION = {
   email: CONTACT.email,
   address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
   areaServed: { '@type': 'Country', name: 'Kenya' },
-  knowsAbout: services.map((s) => s.title),
+  knowsAbout: [...pillars.map((p) => p.title), ...services.map((s) => s.title)],
 }
 const ORG_REF = { '@id': ORG_ID }
 
@@ -74,14 +75,14 @@ const STATIC: Record<string, PageMeta> = {
   },
   '/services': {
     title: 'Our Services',
-    description: 'HR outsourcing, recruitment, payroll, contract workforce management, training, HR advisory, temporary staffing and benefits administration in Kenya.',
+    description: 'Four workforce solutions for hiring in Kenya: global workforce and partner-enabled EOR support, remote staffing, human capital and HR, and workforce technology.',
     og: 'services',
     crumbs: [home, servicesCrumb],
     jsonLd: [{
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Avenyra Global services',
-      itemListElement: services.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.title, url: canonicalUrl(`/services/${s.slug}`) })),
+      name: 'Avenyra Global service pillars',
+      itemListElement: pillars.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.title, url: canonicalUrl(`/services/${p.slug}`) })),
     }],
   },
   '/industries': {
@@ -129,15 +130,42 @@ const STATIC: Record<string, PageMeta> = {
   },
 }
 
+function pillarMeta(slug: string): PageMeta | undefined {
+  const p = getPillar(slug)
+  if (!p) return undefined
+  const path = `/services/${p.slug}`
+  return {
+    title: p.title,
+    description: `${p.headline} ${p.summary}`,
+    og: `pillar-${p.slug}`,
+    crumbs: [home, servicesCrumb, { name: p.title, path }],
+    jsonLd: [{
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: p.title,
+      serviceType: p.title,
+      description: p.intro,
+      url: canonicalUrl(path),
+      image: `${SITE_URL}/og/pillar-${p.slug}.jpg`,
+      areaServed: { '@type': 'Country', name: 'Kenya' },
+      provider: { '@type': 'ProfessionalService', name: SITE_NAME, url: `${SITE_URL}/` },
+      hasOfferCatalog: { '@type': 'OfferCatalog', name: p.title, itemListElement: p.includes.map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })) },
+    }],
+  }
+}
+
 function serviceMeta(slug: string): PageMeta | undefined {
+  const pillarPage = pillarMeta(slug)
+  if (pillarPage) return pillarPage
   const s = services.find((x) => x.slug === slug)
   if (!s) return undefined
   const path = `/services/${s.slug}`
+  const pillar = pillarOf(s.slug)
   return {
     title: s.title,
     description: s.summary,
     og: `service-${s.slug}`,
-    crumbs: [home, servicesCrumb, { name: s.title, path }],
+    crumbs: [home, servicesCrumb, ...(pillar ? [{ name: pillar.title, path: `/services/${pillar.slug}` }] : []), { name: s.title, path }],
     jsonLd: [{
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -211,6 +239,7 @@ export function structuredData(meta: PageMeta) {
 /** Every page to prerender at build time. */
 export const PRERENDER_ROUTES: string[] = [
   ...Object.keys(STATIC),
+  ...pillars.map((p) => `/services/${p.slug}`),
   ...services.map((s) => `/services/${s.slug}`),
   ...articles.map((a) => `/insights/${a.slug}`),
 ]
@@ -220,12 +249,13 @@ export function ogImageSpecs() {
   const specs: Record<string, { title: string; kicker: string; photo: string }> = {
     home: { title: 'Build and manage high-performing teams in Kenya.', kicker: 'Human Capital · Workforce · Technology Advisory', photo: '/images/team-high-five.jpg' },
     about: { title: 'A people-centred workforce partner.', kicker: 'About Avenyra Global', photo: '/images/colleagues.jpg' },
-    services: { title: 'Eight integrated HR services. One workforce partner.', kicker: 'Our Services', photo: '/images/women-team.jpg' },
+    services: { title: 'Hire Kenyan talent. Build your team. Support your growth.', kicker: 'Our Services', photo: '/images/women-team.jpg' },
     industries: { title: 'Supporting organisations across diverse industries.', kicker: 'Industries', photo: '/images/meeting-room.jpg' },
     careers: { title: 'Talent creates possibilities. Opportunities create futures.', kicker: 'Careers', photo: '/images/smiling-portrait.jpg' },
     insights: { title: 'Practical notes on people and work.', kicker: 'Insights', photo: '/images/woman-laptop-office.jpg' },
     contact: { title: 'Let’s start a conversation.', kicker: 'Contact · Nairobi, Kenya', photo: '/images/nairobi-skyline.jpg' },
   }
+  for (const p of pillars) specs[`pillar-${p.slug}`] = { title: p.headline, kicker: p.title, photo: p.image }
   for (const s of services) specs[`service-${s.slug}`] = { title: s.title, kicker: 'Our Services', photo: s.image }
   for (const a of articles) specs[`insight-${a.slug}`] = { title: a.title, kicker: `Insights · ${a.category}`, photo: a.image }
   return specs

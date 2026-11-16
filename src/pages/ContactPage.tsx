@@ -7,6 +7,7 @@ import EnquiryForm from '../components/EnquiryForm'
 import { EnvelopeIcon, PhoneIcon, PinIcon } from '../components/icons'
 import { CONTACT } from '../content/company'
 import Photo from '../components/Photo'
+import { getPillar } from '../content/pillars'
 
 const TYPE_FROM_QUERY: Record<string, string> = {
   consultation: 'Request a consultation',
@@ -20,7 +21,11 @@ export default function ContactPage() {
   // Read after load: the prerendered page has no query string, so choosing the
   // enquiry type during the first render would not match the HTML.
   const [defaultType, setDefaultType] = useState<string | undefined>()
-  useEffect(() => setDefaultType(TYPE_FROM_QUERY[params.get('enquiry') ?? '']), [params])
+  const [defaultSolution, setDefaultSolution] = useState<string | undefined>()
+  useEffect(() => {
+    setDefaultType(TYPE_FROM_QUERY[params.get('enquiry') ?? ''])
+    setDefaultSolution(getPillar(params.get('solution') ?? '')?.title)
+  }, [params])
 
   return (
     <Layout>
@@ -29,7 +34,7 @@ export default function ContactPage() {
         <div className={styles.wrap}>
           <div className={`${styles.eyebrow} ${styles.eyebrowLight}`}>Contact</div>
           <h1>Let&rsquo;s start a conversation.</h1>
-          <p>Tell us about the workforce support you need. We will reply to the email address you provide.</p>
+          <p>Tell us which roles you need, how your team will work and where you need support. We will reply to the email address you provide.</p>
         </div>
       </section>
 
@@ -53,7 +58,7 @@ export default function ContactPage() {
           </Reveal>
           <div className={styles.contactFormCard}>
             <h2 className={styles.formTitle}>Send an enquiry</h2>
-            <EnquiryForm key={defaultType ?? 'none'} kind="enquiry" defaultType={defaultType} />
+            <EnquiryForm key={`${defaultType}-${defaultSolution}`} kind="enquiry" defaultType={defaultType} defaultSolution={defaultSolution} />
           </div>
         </div>
       </section>
