@@ -7,6 +7,7 @@ Each release is also named after a place in Kenya, in alphabetical order (see [d
 ## [Unreleased]
 
 ### Changed
+- Section labels and small tags use Plus Jakarta Sans (the logo typeface) instead of a typewriter font. When a label wraps on a phone, its leading line stays level with the first line.
 - Colours follow the brand hierarchy. Signal orange is kept for primary buttons and small accents such as section labels. Links, icons and secondary hovers are periwinkle. Button text and hover states are night purple. Dividers and borders are soft periwinkle. Magenta marks the newest release. Off-palette light oranges on dark panels are replaced with soft periwinkle.
 
 ## [1.4.0] "Elgon" - 2026-11-16
