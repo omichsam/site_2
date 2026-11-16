@@ -16,9 +16,10 @@
   --line: rgba(39, 30, 96, 0.14);
   --white: #FFFFFF;
   --maxw: 1180px;
-  --display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* headings, wordmark */
+  --display: 'Lora', Georgia, 'Times New Roman', serif; /* headings */
+  --brand: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* wordmark */
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --label: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* uppercase eyebrows & tags */
+  --label: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; /* uppercase eyebrows & tags */
 
   margin: 0;
   background: var(--offwhite);
@@ -38,7 +39,8 @@
 /* Photo wraps each image in <picture>; let the <img> keep its place in grids and flex rows. */
 .page picture { display: contents; }
 .page a { color: inherit; text-decoration: none; }
-.page a.btnPrimary, .page a.navBtnPrimary { color: var(--white); }
+.page a.btnPrimary, .page a.navBtnPrimary { color: var(--ink); }
+.page a.btnPrimary:hover, .page a.navBtnPrimary:hover { color: var(--white); }
 .page a.btnGhost, .page a.navBtnGhost { color: var(--indigo); }
 .page ul { margin: 0; padding: 0; list-style: none; }
 
@@ -54,9 +56,9 @@
 }
 
 .eyebrow {
-  font-family: var(--label); font-weight: 600;
+  font-family: var(--label); font-weight: 500;
   font-size: 12.5px;
-  letter-spacing: .13em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--orangeText);
   display: flex;
@@ -64,12 +66,11 @@
   gap: 10px;
   margin-bottom: 18px;
 }
-/* A small dot marks each section label (no dash line). */
+/* A short rule leads each section label. */
 .eyebrow::before {
   content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 22px;
+  height: 1.5px;
   background: var(--orange);
   display: inline-block;
   flex-shrink: 0;
@@ -94,9 +95,10 @@
 }
 .btn:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
 
+/* Brand orange with dark text: 5.2:1 contrast, brighter than white on a darkened orange. */
 .btnPrimary {
   background: var(--orange);
-  color: var(--white);
+  color: var(--ink);
 }
 .btnPrimary:hover { background: var(--nightPurple); transform: translateY(-1px); }
 
@@ -116,10 +118,10 @@
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--indigo); }
-.brandWord { font-family: var(--display); font-weight: 800; font-size: 21px; line-height: 1.05; letter-spacing: -.02em; color: var(--indigo); }
+.brandWord { font-family: var(--brand); font-weight: 800; font-size: 21px; line-height: 1.05; letter-spacing: -.02em; color: var(--indigo); }
 .brandWord span {
   color: var(--orangeText);
-  font-family: var(--label);
+  font-family: var(--brand);
   font-weight: 600;
   font-size: 10.5px;
   display: block;
@@ -219,7 +221,7 @@
 /* ---------- HERO ---------- */
 .hero { position: relative; padding: 76px 0 64px; overflow: hidden; background: radial-gradient(ellipse at 82% 45%, rgba(159, 147, 209, .15), transparent 38%); }
 .heroGrid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; position: relative; z-index: 2; }
-.hero h1 { max-width: 650px; font-size: clamp(36px, 4.2vw, 56px); letter-spacing: -.01em; word-spacing: .04em; }
+.hero h1 { max-width: 650px; font-size: clamp(36px, 4.2vw, 56px); line-height: 1.12; letter-spacing: -.005em; }
 .lede { font-size: 18px; line-height: 1.7; color: var(--inkSoft); max-width: 540px; margin: 24px 0 32px; }
 .heroCtas { display: flex; gap: 16px; flex-wrap: wrap; }
 .heroNote { margin: 18px 0 0; color: var(--inkSoft); font-size: 13px; }
@@ -566,7 +568,7 @@
   outline: 3px solid var(--periwinkle);
   outline-offset: 3px;
 }
-.page .btnPrimary, .page .navBtnPrimary { background: #a84612; }
+.page .btnPrimary, .page .navBtnPrimary { background: var(--orange); }
 .page .btnPrimary:hover, .page .navBtnPrimary:hover { background: var(--nightPurple); }
 @media (max-width: 480px) {
   .formRow2 { grid-template-columns: 1fr; }
@@ -1209,6 +1211,16 @@
 
 /* ---------- Legal ---------- */
 .legal { max-width: 780px; }
+/* Release notes: each release shows the first letter of its name, the A to Z of versions. */
+.releaseList { margin: 40px 0 0; padding: 0; list-style: none; display: grid; gap: 28px; }
+.page .releaseList > li { display: grid; grid-template-columns: 56px 1fr; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.page .releaseList > li:last-child { border-bottom: 0; }
+.releaseLetter { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: var(--indigo); color: var(--white); font-family: var(--display); font-weight: 700; font-size: 28px; }
+.page .releaseList > li:first-child .releaseLetter { background: var(--orange); color: var(--ink); }
+.releaseItem h2 { font-size: 24px; }
+.releaseItem h2 small { margin-left: 8px; font-family: var(--label); font-weight: 500; font-size: 13px; color: var(--inkSoft); }
+.page .releaseMeta { margin: 6px 0 10px; font-size: 14px; }
+.page .releaseItem ul { list-style: disc; padding-left: 20px; color: var(--inkSoft); line-height: 1.7; }
 .page .legal h1 { font-size: clamp(32px, 4vw, 46px); margin-bottom: 24px; }
 .legal p { color: var(--inkSoft); font-size: 16px; line-height: 1.8; }
 .page .legal p a { color: var(--periwinkle); text-decoration: underline; }

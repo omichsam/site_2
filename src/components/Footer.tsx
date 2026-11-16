@@ -3,6 +3,7 @@ import styles from '../styles/site.module.css'
 import { LogoMark, ArrowRightIcon, PinIcon, PhoneIcon, EnvelopeIcon } from './icons'
 import { services } from '../content/services'
 import { company, CONTACT } from '../content/company'
+import { currentRelease } from '../content/releases'
 
 const ArrowUpIcon = () => (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -84,7 +85,9 @@ export default function Footer() {
           {/* The prerendered year can lag the visitor's clock; let React fix it quietly. */}
           <p suppressHydrationWarning>© {new Date().getFullYear()} Avenyra Global. All rights reserved.</p>
           <div className={styles.footLegal}>
-            <span>Version {__APP_VERSION__}</span>
+            <Link to="/releases" title="What’s new in this version">
+              Version {__APP_VERSION__} · {currentRelease(__APP_VERSION__).name}
+            </Link>
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms &amp; Conditions</Link>
           </div>

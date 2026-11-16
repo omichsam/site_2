@@ -19,6 +19,7 @@ const W = 1200
 const H = 630
 const PHOTO_W = 470
 const FONT = "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+const SERIF = "Georgia, 'Times New Roman', serif" // titles, matching the site's serif headings
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
 const LOGO = (size, letter = '#FFFFFF') => `
@@ -66,7 +67,7 @@ async function card(name, { title, kicker, photo }) {
     <text x="142" y="92" font-family="${FONT}" font-weight="800" font-size="30" fill="#FFFFFF">Avenyra</text>
     <text x="143" y="116" font-family="${FONT}" font-weight="700" font-size="14" letter-spacing="5" fill="#F4A06B">GLOBAL</text>
     <text x="64" y="${titleTop - size - 18}" font-family="${FONT}" font-weight="700" font-size="17" letter-spacing="3" fill="#F4A06B">${esc(kicker.toUpperCase())}</text>
-    ${lines.map((l, i) => `<text x="64" y="${titleTop + i * lineH}" font-family="${FONT}" font-weight="800" font-size="${size}" fill="#FFFFFF">${esc(l)}</text>`).join('\n    ')}
+    ${lines.map((l, i) => `<text x="64" y="${titleTop + i * lineH}" font-family="${SERIF}" font-weight="700" font-size="${size}" fill="#FFFFFF">${esc(l)}</text>`).join('\n    ')}
     <text x="64" y="568" font-family="${FONT}" font-weight="600" font-size="19" fill="#B9B2E0">HR Outsourcing  ·  Recruitment  ·  Payroll  ·  Nairobi, Kenya</text>
   </svg>`
   const photoBuf = await sharp(path.join(root, 'public', photo)).resize(PHOTO_W, H, { fit: 'cover', position: 'attention' }).toBuffer()

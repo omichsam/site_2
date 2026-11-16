@@ -115,6 +115,12 @@ const STATIC: Record<string, PageMeta> = {
     og: 'home',
     crumbs: [home, { name: 'Privacy Policy', path: '/privacy' }],
   },
+  '/releases': {
+    title: 'What’s New',
+    description: 'Release notes for the Avenyra Global website. Each version is named after a place in Kenya.',
+    og: 'home',
+    crumbs: [home, { name: 'What’s New', path: '/releases' }],
+  },
   '/terms': {
     title: 'Terms & Conditions',
     description: 'The terms that apply to using the Avenyra Global website.',
@@ -212,7 +218,7 @@ export const PRERENDER_ROUTES: string[] = [
 /** Share images to generate: name → { title, kicker, photo }. Used by scripts/make-og.mjs. */
 export function ogImageSpecs() {
   const specs: Record<string, { title: string; kicker: string; photo: string }> = {
-    home: { title: 'Empowering people. Strengthening organisations.', kicker: 'People. Potential. Progress.', photo: '/images/team-high-five.jpg' },
+    home: { title: 'Build and manage high-performing teams in Kenya.', kicker: 'Human Capital · Workforce · Technology Advisory', photo: '/images/team-high-five.jpg' },
     about: { title: 'A people-centred workforce partner.', kicker: 'About Avenyra Global', photo: '/images/colleagues.jpg' },
     services: { title: 'Eight integrated HR services. One workforce partner.', kicker: 'Our Services', photo: '/images/women-team.jpg' },
     industries: { title: 'Supporting organisations across diverse industries.', kicker: 'Industries', photo: '/images/meeting-room.jpg' },

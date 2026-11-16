@@ -22,14 +22,14 @@ export default function HomePage() {
         <div className={`${styles.wrap} ${styles.heroGrid}`}>
           <div>
             <div className={styles.eyebrow}>{company.eyebrow}</div>
-            <h1>Empowering people. Strengthening organisations.</h1>
+            <h1>{company.headline}</h1>
             <p className={styles.lede}>{company.hero}</p>
             <div className={styles.heroCtas}>
               <Link to="/contact?enquiry=consultation" className={`${styles.btn} ${styles.btnPrimary}`}>
-                Partner With Us
+                Discuss Your Workforce Needs
               </Link>
               <Link to="/services" className={`${styles.btn} ${styles.btnGhost}`}>
-                Explore Our Services <ArrowRightIcon />
+                Explore Our Solutions <ArrowRightIcon />
               </Link>
             </div>
             <div className={styles.heroPeople}>

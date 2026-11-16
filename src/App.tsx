@@ -11,6 +11,7 @@ import InsightsPage from './pages/InsightsPage'
 import InsightDetailPage from './pages/InsightDetailPage'
 import ContactPage from './pages/ContactPage'
 import LegalPage from './pages/LegalPage'
+import ReleasesPage from './pages/ReleasesPage'
 
 function NotFound() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/privacy" element={<LegalPage doc="privacy" />} />
       <Route path="/terms" element={<LegalPage doc="terms" />} />
+      <Route path="/releases" element={<ReleasesPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

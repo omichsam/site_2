@@ -1,10 +1,10 @@
 export const company = {
   name: "Avenyra Global",
   tagline: "People. Potential. Progress.",
-  eyebrow: "Your people. Our priority.",
-  headline: "Empowering People. Strengthening Organisations.",
+  eyebrow: "Human Capital · Workforce · Technology Advisory — Kenya",
+  headline: "Build and manage high-performing teams in Kenya.",
   hero:
-    "Avenyra Global provides integrated human resource outsourcing, recruitment and workforce management solutions that help organisations attract talent, manage people effectively and achieve their business objectives.",
+    "Avenyra helps Kenyan and international organizations recruit, support and manage Kenyan talent through recruitment, remote staffing, HR outsourcing, payroll coordination and partner-enabled EOR support.",
   description:
     "Avenyra Global is a human resource outsourcing, recruitment and workforce solutions company. The firm works with businesses, institutions, government organisations, NGOs and people seeking employment.",
   metaDescription:

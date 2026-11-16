@@ -2,9 +2,18 @@
 
 All notable changes to this site are recorded here, following [Semantic Versioning](https://semver.org/) and the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format.
 
-## [Unreleased]
+Each release is also named after a place in Kenya, in alphabetical order (see [docs/VERSIONING.md](docs/VERSIONING.md)). The name is shown in the footer and on the What's New page.
+
+## [1.3.0] "Diani" - 2026-11-16
+
+### Added
+- Release names: every version is named after a Kenyan place, A to Z. The footer shows the version and its name, linking to a new What's New page.
 
 ### Changed
+- New home page hero: "Build and manage high-performing teams in Kenya.", with the Human Capital, Workforce and Technology Advisory label, a new introduction, and "Discuss Your Workforce Needs" and "Explore Our Solutions" buttons.
+- Headings across the site use the Lora serif, and section labels use IBM Plex Mono with a short leading rule instead of a dot. The logo keeps its own typeface.
+- Main buttons are the brand orange with dark text, brighter and still high contrast.
+- Link-preview images use serif titles, and the home preview shows the new headline.
 - Photography now mostly shows African professionals: new photos for payroll, HR advisory, temporary staffing, benefits, banking, healthcare, manufacturing and logistics, hospitality and SMEs, plus office and team photos for the page sections.
 - Every photo is used for one purpose only (a service, industry or article photo appears only with that item). `node scripts/check-photos.mjs` checks this.
 - Career fields on the Careers page are icon cards with typical roles, instead of reusing industry photos.
@@ -18,13 +27,13 @@ All notable changes to this site are recorded here, following [Semantic Versioni
 - The vision and mission cards on About Us are about half as tall: the photos are now short banners.
 - Service photos on Our Services and the industry shortcuts keep their intended shape instead of showing at full photo height.
 
-## [1.2.0] - 2026-11-08
+## [1.2.0] "Chalbi" - 2026-11-08
 
 ### Added
 - Visit statistics with GoatCounter (anonymous, no cookies, no consent banner). Counts every page view, including moves between pages, and these actions: consultation and contact buttons, "Discuss this service", CV links, phone, email and WhatsApp clicks, and enquiry and CV form submissions (only the chosen category is recorded).
 - Privacy Policy explains the visit statistics.
 
-## [1.1.0] - 2026-11-08
+## [1.1.0] "Baringo" - 2026-11-08
 
 Faster pages, better search results and link previews, and accessibility fixes.
 
@@ -48,7 +57,7 @@ Faster pages, better search results and link previews, and accessibility fixes.
 - The logo link's accessible name now matches its visible text.
 - Links to a section (for example an industry from the home page) land just below the header instead of 90px lower.
 
-## [1.0.0] - 2026-11-08
+## [1.0.0] "Amboseli" - 2026-11-08
 
 First release.
 
