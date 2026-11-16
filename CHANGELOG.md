@@ -6,6 +6,8 @@ Each release is also named after a place in Kenya, in alphabetical order (see [d
 
 ## [Unreleased]
 
+## [1.4.0] "Elgon" - 2026-11-16
+
 ### Changed
 - Services are organised as four pillars: Global Workforce Solutions (with partner-enabled EOR support), Remote Staffing & Managed Workforce, Human Capital & HR Solutions, and Workforce Technology & Transformation. The eight existing services stay, each with its own page, grouped beneath their pillar.
 - Home page: the services tabs show the four pillars with three key services each, the hero panel offers the three entry points, and the heading reads "Four integrated workforce solutions. One Kenya-based partner."

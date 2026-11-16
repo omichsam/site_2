@@ -25,19 +25,20 @@ The number follows [Semantic Versioning](https://semver.org/): `MAJOR.MINOR.PATC
 | 1.1.0 | Baringo | A freshwater lake in the Rift Valley | 8 November 2026 |
 | 1.2.0 | Chalbi | A desert of salt flats in northern Kenya | 8 November 2026 |
 | 1.3.0 | Diani | A white sand beach on the south coast | 16 November 2026 |
+| 1.4.0 | Elgon | A mountain on the border with Uganda, known for its caves | 16 November 2026 |
 
 ## Names reserved for coming releases
 
-Elgon, Fourteen Falls, Gede, Hell's Gate, Isiolo, Kakamega, Lamu, Malindi, Naivasha, Ol Pejeta, Pate, Ruma, Samburu, Tsavo, Ukunda, Voi, Watamu.
+Fourteen Falls, Gede, Hell's Gate, Isiolo, Kakamega, Lamu, Malindi, Naivasha, Ol Pejeta, Pate, Ruma, Samburu, Tsavo, Ukunda, Voi, Watamu.
 
 Letters with no well known place (J, Q, X, Y, Z) are skipped. After Watamu, names start again at A with Kenyan rivers (Athi, Ewaso Ng'iro, Galana and so on).
 
 ## How to make a release
 
-1. Move the items under `[Unreleased]` in `CHANGELOG.md` into a new heading: `## [1.4.0] "Elgon" - YYYY-MM-DD`.
+1. Move the items under `[Unreleased]` in `CHANGELOG.md` into a new heading, for example `## [1.5.0] "Fourteen Falls" - YYYY-MM-DD`.
 2. Add the release at the top of `releases` in `src/content/releases.ts`, with the place line and two to four highlights in plain words, and remove its name from `upcomingNames`.
 3. Set `"version"` in `package.json`.
-4. Commit, then tag: `git tag -a v1.4.0 -m "1.4.0 Elgon"`.
+4. Commit, then tag, for example `git tag -a v1.5.0 -m "1.5.0 Fourteen Falls"`.
 5. Build and publish: `npm run build:pages`, then push `dist` to the `gh-pages` branch.
 
 A patch release skips step 2's new entry: it changes only the number, and the footer keeps showing the name of the release it fixes.

@@ -16,6 +16,18 @@ export interface Release {
 /** Newest first. Add a release at the top when you run a new version. */
 export const releases: Release[] = [
   {
+    version: '1.4.0',
+    name: 'Elgon',
+    place: 'A mountain on the border with Uganda, known for its caves.',
+    date: '2026-11-16',
+    highlights: [
+      'Services organised as four pillars, including the new Workforce Technology & Transformation.',
+      'Three quick starting points: Recruit Talent in Kenya, Build a Remote Team and Establish Workforce Operations in Kenya.',
+      'A page for each pillar, with its supporting services beneath it.',
+      'The enquiry form asks for the roles, number of people, location and start date.',
+    ],
+  },
+  {
     version: '1.3.0',
     name: 'Diani',
     place: 'A white sand beach on Kenya’s south coast.',
@@ -56,7 +68,7 @@ export const releases: Release[] = [
 
 /** Names reserved for the releases to come, in order. */
 export const upcomingNames = [
-  'Elgon', 'Fourteen Falls', 'Gede', 'Hell’s Gate', 'Isiolo', 'Kakamega', 'Lamu', 'Malindi',
+  'Fourteen Falls', 'Gede', 'Hell’s Gate', 'Isiolo', 'Kakamega', 'Lamu', 'Malindi',
   'Naivasha', 'Ol Pejeta', 'Pate', 'Ruma', 'Samburu', 'Tsavo', 'Ukunda', 'Voi', 'Watamu',
 ]
 
