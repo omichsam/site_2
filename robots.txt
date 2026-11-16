@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omichsam.github.io/site_2/sitemap.xml
