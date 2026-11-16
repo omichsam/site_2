@@ -5,11 +5,11 @@ import { ArrowRightIcon, PinIcon } from './icons'
 import ServiceGlyph from './ServiceGlyph'
 import { entryPoints } from '../content/pillars'
 
-const ORANGE = '#DF6E28'
+// Icons and secondary interactions use periwinkle (brand colour hierarchy).
 const PERIWINKLE = '#7149CC'
 
 // The three most common starting points, each leading to its service content.
-const HIGHLIGHTS = entryPoints.map((entry, i) => ({ ...entry, tone: i === 1 ? PERIWINKLE : ORANGE }))
+const HIGHLIGHTS = entryPoints.map((entry) => ({ ...entry, tone: PERIWINKLE }))
 
 const STEP_MS = 3000
 
