@@ -16,6 +16,16 @@ export interface Release {
 /** Newest first. Add a release at the top when you run a new version. */
 export const releases: Release[] = [
   {
+    version: '1.5.0',
+    name: 'Fourteen Falls',
+    place: 'A wide waterfall on the Athi River near Thika.',
+    date: '2026-11-16',
+    highlights: [
+      'Colours follow the brand hierarchy: orange for main buttons, periwinkle for links and icons.',
+      'Section labels use the logo typeface, and stay neat when they wrap on phones.',
+    ],
+  },
+  {
     version: '1.4.0',
     name: 'Elgon',
     place: 'A mountain on the border with Uganda, known for its caves.',
@@ -68,7 +78,7 @@ export const releases: Release[] = [
 
 /** Names reserved for the releases to come, in order. */
 export const upcomingNames = [
-  'Fourteen Falls', 'Gede', 'Hell’s Gate', 'Isiolo', 'Kakamega', 'Lamu', 'Malindi',
+  'Gede', 'Hell’s Gate', 'Isiolo', 'Kakamega', 'Lamu', 'Malindi',
   'Naivasha', 'Ol Pejeta', 'Pate', 'Ruma', 'Samburu', 'Tsavo', 'Ukunda', 'Voi', 'Watamu',
 ]
 
